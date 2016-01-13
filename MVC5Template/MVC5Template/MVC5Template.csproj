@@ -219,7 +219,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DetailController.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="edmx\MVC5Template.Context.cs">
       <AutoGen>True</AutoGen>
