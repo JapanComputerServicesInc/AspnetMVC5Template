@@ -192,7 +192,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\Log.cs" />
+    <Compile Include="App_GlobalResources\GlobalResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobalResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="edmx\MVC5Template.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MVC5Template.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\User.cs">
+      <DependentUpon>MVC5Template.tt</DependentUpon>
+    </Compile>
     <Content Include="App_Code\DefaultContoller.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -208,11 +221,24 @@
     </Compile>
     <Compile Include="Models\DetailController.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="edmx\MVC5Template.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MVC5Template.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\MVC5Template.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MVC5Template.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\MVC5Template.mdf" />
+    <Content Include="App_Data\MVC5Template_log.ldf">
+      <DependentUpon>MVC5Template.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\signin.css" />
@@ -220,6 +246,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="edmx\MVC5Template.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MVC5Template.edmx</DependentUpon>
+      <LastGenOutput>MVC5Template.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="edmx\MVC5Template.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MVC5Template.edmx</DependentUpon>
+      <LastGenOutput>MVC5Template.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -228,6 +264,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Areas\Admin\Views\web.config" />
+    <EntityDeploy Include="edmx\MVC5Template.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MVC5Template.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="edmx\MVC5Template.edmx.diagram">
+      <DependentUpon>MVC5Template.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -260,13 +303,14 @@
     <Content Include="Views\Shared\_SigninLayout.cshtml" />
     <Content Include="Views\Menu\Index.cshtml" />
     <Content Include="Views\Menu\Offcanvas.cshtml" />
-    <Content Include="Views\Detail\UserDetil.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Browsers\" />
-    <Folder Include="App_Data\" />
-    <Folder Include="App_GlobalResources\" />
-    <Folder Include="App_LocalResources\" />
     <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
@@ -280,6 +324,16 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\GlobalResource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>GlobalResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\LocalResource.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

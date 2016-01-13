@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MVC5Sample")]
+[assembly: AssemblyTitle("MVC5Template")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("株式会社ジャパンコンピューターサービス")]
-[assembly: AssemblyProduct("MVC5Sample")]
+[assembly: AssemblyProduct("MVC5Template")]
 [assembly: AssemblyCopyright("Copyright © 株式会社ジャパンコンピューターサービス 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
