@@ -27,7 +27,7 @@ namespace MVC5Template.Controllers
                     , new { UserID = model.UserName, Password = model.Password });
                 if (result.Count != 0)
                 {
-                    return RedirectToLocal(returnUrl);
+                    //return RedirectToLocal(returnUrl);
                 }
                 else
                 {
@@ -54,6 +54,7 @@ namespace MVC5Template.Controllers
                 //    ModelState.AddModelError("", "ログインIDまたはパスワードが無効です。");
                 //}
             }
+            return View();
         }
     }
 }

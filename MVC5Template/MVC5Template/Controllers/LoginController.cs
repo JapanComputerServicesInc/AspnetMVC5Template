@@ -22,7 +22,7 @@ namespace MVC5Template.Controllers
         {
             string UserID = "999999";
             DapperSample<User> dapper = new DapperSample<User>("MVC5TemplateServer");
-            dynamic result = dapper.Select("SELECT UserID FROM [dbo].[User] WHERE UserID = @UserID", new { UserID = UserID });
+            dynamic result = await dapper.Select("SELECT UserID FROM [dbo].[User] WHERE UserID = @UserID", new { UserID = UserID });
             if (result.Count != 0)
             {
                 View();

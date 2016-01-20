@@ -36,7 +36,7 @@ namespace MVC5Template.Models
                         result = cn.Execute(update, param);
                         tr.Commit();
                     }
-                    catch (Exception e)
+                    catch
                     {
                         tr.Rollback();
                     }
@@ -59,7 +59,7 @@ namespace MVC5Template.Models
                         result = cn.Execute(insert, param);
                         tr.Commit();
                     }
-                    catch (Exception e)
+                    catch
                     {
                         tr.Rollback();
                     }
@@ -82,7 +82,7 @@ namespace MVC5Template.Models
                         result = cn.Execute(delete, param);
                         tr.Commit();
                     }
-                    catch (Exception e)
+                    catch
                     {
                         tr.Rollback();
                     }
