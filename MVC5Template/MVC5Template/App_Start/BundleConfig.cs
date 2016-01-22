@@ -23,12 +23,20 @@ namespace MVC5Template
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/html5shiv").Include(
+                      "~/Scripts/html5shiv.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
+            // Render Handsontable
             bundles.Add(new ScriptBundle("~/bundles/handsontable").Include(
-                        "~/Scripts/handsontable/Scripts/"));
+                        "~/Scripts/handsontable-master/dist/handsontable.full.js"));
+
+            bundles.Add(new StyleBundle("~/Content/handsontable").Include(
+                      "~/Scripts/handsontable-master/dist/handsontable.full.css",
+                      "~/Scripts/handsontable-master/plugins/bootstrap/handsontable.bootstrap.css"));
         }
     }
 }

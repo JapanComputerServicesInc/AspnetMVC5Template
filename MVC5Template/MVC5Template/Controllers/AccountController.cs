@@ -1,37 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using MVC5Template.Models;
-using System.Threading.Tasks;
 
 namespace MVC5Template.Controllers
-{        // このコントローラは認証いらない
-    [AllowAnonymous]
-    public class AccountController : Controller
+{
+    public class AccountController : DefaultController
     {
         public ActionResult Index()
         {
-            ViewBag.ReturnUrl = "/Account/Login";
+            //ViewBag.ReturnUrl = "/Account/Login";
+            return View("Login");
+        }
+
+        [HttpGet]
+        public ActionResult Login()
+        {
             return View();
         }
 
-        // GET: Login
-        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(LoginViewModel model, string returnUrl)
         {
             if (ModelState.IsValid)
             {
-                DapperSample<User> dapper = new DapperSample<User>("MVC5TemplateServer");
-                List<User> result = await dapper.Select("SELECT UserID FROM [dbo].[User] WHERE UserID = @UserID AND Password = @Password"
-                    , new { UserID = model.UserName, Password = model.Password });
-                if (result.Count != 0)
+                IEnumerable<User> result = DapperManager.Select<User>("MVC5TemplateServer",
+                    "SELECT UserID FROM [dbo].[User] WHERE UserID = @UserID AND Password = @Password",
+                    new { UserID = model.UserID, Password = model.Password });
+                if (result.Count() != 0)
                 {
-                    //return RedirectToLocal(returnUrl);
+                    return RedirectToAction("Index", "Menu");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "ユーザー名またはパスワードが無効です。");
+                    ModelState.AddModelError(
+                        "Login_Error", 
+                        HttpContext.GetGlobalResourceObject("ResourceError", "Login_LoginError_ErrorMessage").ToString());
+                    return View();
                 }
 
                 //var userManager = new ApplicationUserManager(new ApplicationUserStore());

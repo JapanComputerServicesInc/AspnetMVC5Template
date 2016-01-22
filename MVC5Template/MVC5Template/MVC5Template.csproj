@@ -72,6 +72,10 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
       <Private>True</Private>
@@ -178,36 +182,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_GlobalResources\GlobalResource.Designer.cs" />
+    <Compile Include="App_GlobalResources\ResourceElementValue.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceElementValue.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ResourceError.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceError.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ResourceMessage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceMessage.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DefaultContoller.cs" />
+    <Compile Include="Controllers\HandsontableController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ApplicationUserManager.cs" />
     <Compile Include="Models\ApplicationUserStore.cs" />
-    <Compile Include="Models\DapperSample.cs" />
+    <Compile Include="Models\CustomRequiredAttribute.cs" />
+    <Compile Include="Models\DapperManager.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="App_Data\MVC5TemplateModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -227,26 +232,14 @@
     <Compile Include="Models\Model1.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Site.Mobile.Master.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site.Mobile.Master.designer.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="App_Data\User.cs">
       <DependentUpon>MVC5TemplateModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="User.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ViewSwitcher.ascx.cs">
-      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ViewSwitcher.ascx.designer.cs">
-      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -254,36 +247,29 @@
     <Content Include="App_Data\MVC5Template_log.ldf">
       <DependentUpon>MVC5Template.mdf</DependentUpon>
     </Content>
-    <Content Include="fonts\Content\bootstrap-theme.css" />
-    <Content Include="fonts\Content\bootstrap-theme.min.css" />
-    <Content Include="fonts\Content\bootstrap.css" />
-    <Content Include="fonts\Content\bootstrap.min.css" />
-    <Content Include="fonts\Content\signin.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\signin.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="fonts\Content\Site.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="fonts\Content\bootstrap.min.css.map" />
-    <Content Include="fonts\Content\bootstrap.css.map" />
-    <Content Include="fonts\Content\bootstrap-theme.min.css.map" />
-    <Content Include="fonts\Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
     <EntityDeploy Include="App_Data\MVC5TemplateModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>MVC5TemplateModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="App_Data\MVC5TemplateModel.edmx.diagram">
       <DependentUpon>MVC5TemplateModel.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
     <Content Include="Scripts\DataTables-1.10.10\media\css\dataTables.bootstrap.css" />
     <Content Include="Scripts\DataTables-1.10.10\media\css\dataTables.bootstrap.min.css" />
@@ -309,11 +295,119 @@
     <Content Include="Scripts\DataTables-1.10.10\media\js\jquery.dataTables.js" />
     <Content Include="Scripts\DataTables-1.10.10\media\js\jquery.dataTables.min.js" />
     <Content Include="Scripts\DataTables-1.10.10\media\js\jquery.js" />
+    <Content Include="Scripts\handsontable-master\dist\handsontable.css" />
+    <Content Include="Scripts\handsontable-master\dist\handsontable.full.css" />
+    <Content Include="Scripts\handsontable-master\dist\handsontable.full.js" />
+    <Content Include="Scripts\handsontable-master\dist\handsontable.full.min.css" />
+    <Content Include="Scripts\handsontable-master\dist\handsontable.full.min.js" />
+    <Content Include="Scripts\handsontable-master\dist\handsontable.js" />
+    <Content Include="Scripts\handsontable-master\dist\handsontable.min.css" />
+    <Content Include="Scripts\handsontable-master\dist\handsontable.min.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\af.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\ar-ma.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\ar-sa.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\ar-tn.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\ar.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\az.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\be.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\bg.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\bn.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\bo.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\br.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\bs.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\ca.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\cs.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\cv.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\cy.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\da.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\de-at.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\de.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\el.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\en-au.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\en-ca.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\en-gb.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\eo.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\es.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\et.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\eu.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\fa.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\fi.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\fo.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\fr-ca.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\fr.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\fy.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\gl.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\he.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\hi.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\hr.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\hu.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\hy-am.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\id.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\is.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\it.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\ja.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\jv.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\ka.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\km.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\ko.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\lb.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\lt.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\lv.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\me.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\mk.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\ml.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\mr.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\ms-my.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\ms.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\my.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\nb.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\ne.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\nl.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\nn.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\pl.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\pt-br.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\pt.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\ro.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\ru.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\si.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\sk.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\sl.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\sq.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\sr-cyrl.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\sr.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\sv.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\ta.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\th.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\tl-ph.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\tr.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\tzl.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\tzm-latn.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\tzm.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\uk.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\uz.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\vi.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\zh-cn.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\locale\zh-tw.js" />
+    <Content Include="Scripts\handsontable-master\dist\moment\moment.js" />
+    <Content Include="Scripts\handsontable-master\dist\pikaday\pikaday.css" />
+    <Content Include="Scripts\handsontable-master\dist\pikaday\pikaday.js" />
+    <Content Include="Scripts\handsontable-master\dist\zeroclipboard\ZeroClipboard.js" />
+    <Content Include="Scripts\handsontable-master\dist\zeroclipboard\ZeroClipboard.swf" />
+    <Content Include="Scripts\handsontable-master\plugins\bootstrap\handsontable.bootstrap.css" />
+    <Content Include="Scripts\handsontable-master\plugins\jqueryHandsontable.js" />
+    <Content Include="Scripts\handsontable-master\plugins\removeRow\handsontable.removeRow.css" />
+    <Content Include="Scripts\handsontable-master\plugins\removeRow\handsontable.removeRow.js" />
+    <Content Include="Scripts\handsontable-master\plugins\removeRow\test\jquery.handsontable.removeRow.spec.js" />
+    <Content Include="Scripts\examples\handsontable-Example.js" />
     <Content Include="Scripts\handsontable\index.html" />
     <Content Include="Scripts\handsontable\Scripts\moment\LICENSE" />
     <Content Include="Scripts\handsontable\Scripts\pikaday\LICENSE" />
     <Content Include="Scripts\handsontable\Scripts\zeroclipboard\LICENSE" />
     <Content Include="Scripts\DataTables-1.10.10\media\images\Sorting icons.psd" />
+    <Content Include="Scripts\handsontable-master\dist\moment\LICENSE" />
+    <Content Include="Scripts\handsontable-master\dist\pikaday\LICENSE" />
+    <Content Include="Scripts\handsontable-master\dist\README.md" />
+    <Content Include="Scripts\handsontable-master\dist\zeroclipboard\LICENSE" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="App_Data\MVC5TemplateModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -324,16 +418,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>MVC5TemplateModel.edmx</DependentUpon>
       <LastGenOutput>MVC5TemplateModel.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -435,10 +519,10 @@
     <Content Include="Scripts\handsontable\Scripts\pikaday\pikaday.js" />
     <Content Include="Scripts\handsontable\Scripts\zeroclipboard\ZeroClipboard.js" />
     <Content Include="Scripts\handsontable\Scripts\zeroclipboard\ZeroClipboard.swf" />
-    <Content Include="Scripts\html5shiv\dist\html5shiv-printshiv.js" />
-    <Content Include="Scripts\html5shiv\dist\html5shiv-printshiv.min.js" />
-    <Content Include="Scripts\html5shiv\dist\html5shiv.js" />
-    <Content Include="Scripts\html5shiv\dist\html5shiv.min.js" />
+    <Content Include="Scripts\html5shiv-printshiv.js" />
+    <Content Include="Scripts\html5shiv-printshiv.min.js" />
+    <Content Include="Scripts\html5shiv.js" />
+    <Content Include="Scripts\html5shiv.min.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -452,8 +536,7 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="ViewSwitcher.ascx" />
-    <Content Include="index.html" />
+    <Content Include="Mock\index.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -470,33 +553,38 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\_SigninLayout.cshtml" />
-    <Content Include="Site.Mobile.Master" />
     <Content Include="Views\Menu\Index.cshtml" />
+    <Content Include="Views\Handsontable\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\ResourceError.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceError.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-2.2.0.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_GlobalResources\GlRes.ja.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_LocalResources\LRes.ja.resx" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_GlobalResources\GLRes.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-    </Content>
+    <EmbeddedResource Include="App_GlobalResources\ResourceMessage.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceMessage.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\ResourceElementValue.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceElementValue.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_LocalResources\LRes.resx" />
+    <Folder Include="App_LocalResources\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

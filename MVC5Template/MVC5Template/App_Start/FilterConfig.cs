@@ -9,7 +9,7 @@ namespace MVC5Template
         {
             filters.Add(new HandleErrorAttribute());
             // デフォで認証が必要
-            filters.Add(new AuthorizeAttribute());
+            //filters.Add(new AuthorizeAttribute());
         }
     }
 }
