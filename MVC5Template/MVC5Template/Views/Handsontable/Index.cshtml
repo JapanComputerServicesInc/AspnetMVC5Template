@@ -3,13 +3,14 @@
 }
 
 <div class="container">
-    <div id="example1"></div>
+    <input type="button" id="btnLoad" value="Load" class="btn btn-primary btn-block" />
+    <input type="button" id="btnSave" value="Save" class="btn btn-primary btn-block" />
 
+    <div id="myTable"></div>
 
-    <input type="button" id="btnSubmit" />
 </div>
 
-
+<div id="test"></div>
 
 @section styles {
     @Styles.Render("~/Content/handsontable")
@@ -18,19 +19,41 @@
 @section scripts {
     @Scripts.Render("~/bundles/handsontable")
     <script>
+        var container = document.getElementById('myTable');
+        var hot = new Handsontable(container, {
+            rowHeaders: true,
+            colHeaders: true
+        });
+
         $(document).ready(function () {
             $(function () {
-                $('#btnSubmit').click(function (event) {
+                $('#btnLoad').click(function (event) {
                     event.preventDefault();
-                    var Student = { ID: '10001', Name: 'Shashangka', Age: 31 };
+                    var parameter = { connectionName: 'MVC5TemplateServer', sql: 'SELECT * FROM [dbo].[User]' };
                     $.ajax({
                         type: "POST",
                         url: "http://localhost:7629/WebService.asmx/GetJsonData",
-                        data: JSON.stringify(Student),
+                        data: JSON.stringify(parameter),
                         datatype: "json",
                         contentType: 'application/json; charset=utf-8',
-                        success: function (data) {
-                            alert(data.msg);
+                        success: function (message) {
+                            var jsonData = $.parseJSON(message.d);
+                            hot.loadData(jsonData);
+                        },
+                        error: function () {
+                            alert("Error occured!!")
+                        }
+                    });
+                });
+                $('#btnSave').click(function (event) {
+                    event.preventDefault();
+                    $.ajax({
+                        type: "POST",
+                        url: "http://localhost:7629/WebService.asmx/SetJsonData",
+                        data: JSON.stringify(hot.getData()),
+                        datatype: "json",
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (message) {
                         },
                         error: function () {
                             alert("Error occured!!")

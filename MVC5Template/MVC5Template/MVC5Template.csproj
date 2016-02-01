@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -9,14 +9,13 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5AB18975-129A-40E6-B829-AFB0299E06F9}</ProjectGuid>
+    <ProjectGuid>{B5D2F312-2D52-4995-A50E-029A7D0BD034}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MVC5Template</RootNamespace>
     <AssemblyName>MVC5Template</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -52,40 +51,12 @@
       <HintPath>..\packages\Dapper.1.42\lib\net45\Dapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Dapper.Contrib, Version=1.40.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapper.Contrib.1.43\lib\net45\Dapper.Contrib.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Dapper.Data, Version=1.0.14.15321, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.Data.1.14.1\lib\net45\Dapper.Data.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Dapper.Rainbow, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapper.Rainbow.0.1.2\lib\net40\Dapper.Rainbow.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -93,169 +64,219 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Abstractions" />
-    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http">
-    </Reference>
-    <Reference Include="System.Net.Http.WebRequest">
-    </Reference>
-    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Optimization">
-      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
-    </Reference>
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_GlobalResources\ResourceElementValue.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ResourceElementValue.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_GlobalResources\ResourceError.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ResourceError.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_GlobalResources\ResourceMessage.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ResourceMessage.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\DefaultContoller.cs" />
-    <Compile Include="Controllers\HandsontableController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\MenuController.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ApplicationUser.cs" />
-    <Compile Include="Models\ApplicationUserManager.cs" />
-    <Compile Include="Models\ApplicationUserStore.cs" />
-    <Compile Include="Models\CustomRequiredAttribute.cs" />
-    <Compile Include="Models\DapperManager.cs" />
-    <Compile Include="Models\LoginViewModel.cs" />
-    <Compile Include="App_Data\MVC5TemplateModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MVC5TemplateModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\MVC5TemplateModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MVC5TemplateModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\MVC5TemplateModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MVC5TemplateModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.cs" />
-    <Compile Include="Models\User.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resource1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resource1.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Startup.cs" />
-    <Compile Include="App_Data\User.cs">
-      <DependentUpon>MVC5TemplateModel.tt</DependentUpon>
-    </Compile>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\MVC5Template.mdf" />
     <Content Include="App_Data\MVC5Template_log.ldf">
       <DependentUpon>MVC5Template.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\bootstrap-datepicker.css" />
+    <Content Include="Content\bootstrap-datepicker.min.css" />
+    <Content Include="Content\bootstrap-datepicker.standalone.css" />
+    <Content Include="Content\bootstrap-datepicker.standalone.min.css" />
+    <Content Include="Content\bootstrap-datepicker3.css" />
+    <Content Include="Content\bootstrap-datepicker3.min.css" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.css" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\signin.css" />
-    <Content Include="favicon.ico" />
+    <Content Include="Content\DataTables-1.10.10\extensions\AutoFill\css\autoFill.bootstrap.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\AutoFill\css\autoFill.bootstrap.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\AutoFill\css\autoFill.dataTables.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\AutoFill\css\autoFill.dataTables.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\AutoFill\css\autoFill.foundation.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\AutoFill\css\autoFill.foundation.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\AutoFill\css\autoFill.jqueryui.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\AutoFill\css\autoFill.jqueryui.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Buttons\css\buttons.bootstrap.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Buttons\css\buttons.bootstrap.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Buttons\css\buttons.dataTables.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Buttons\css\buttons.dataTables.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Buttons\css\buttons.foundation.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Buttons\css\buttons.foundation.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Buttons\css\buttons.jqueryui.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Buttons\css\buttons.jqueryui.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\ColReorder\css\colReorder.bootstrap.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\ColReorder\css\colReorder.bootstrap.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\ColReorder\css\colReorder.dataTables.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\ColReorder\css\colReorder.dataTables.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\ColReorder\css\colReorder.foundation.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\ColReorder\css\colReorder.foundation.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\ColReorder\css\colReorder.jqueryui.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\ColReorder\css\colReorder.jqueryui.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\FixedColumns\css\fixedColumns.bootstrap.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\FixedColumns\css\fixedColumns.bootstrap.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\FixedColumns\css\fixedColumns.dataTables.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\FixedColumns\css\fixedColumns.dataTables.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\FixedColumns\css\fixedColumns.foundation.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\FixedColumns\css\fixedColumns.foundation.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\FixedColumns\css\fixedColumns.jqueryui.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\FixedColumns\css\fixedColumns.jqueryui.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\FixedHeader\css\fixedHeader.bootstrap.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\FixedHeader\css\fixedHeader.bootstrap.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\FixedHeader\css\fixedHeader.dataTables.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\FixedHeader\css\fixedHeader.dataTables.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\FixedHeader\css\fixedHeader.foundation.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\FixedHeader\css\fixedHeader.foundation.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\FixedHeader\css\fixedHeader.jqueryui.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\FixedHeader\css\fixedHeader.jqueryui.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\KeyTable\css\keyTable.bootstrap.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\KeyTable\css\keyTable.bootstrap.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\KeyTable\css\keyTable.dataTables.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\KeyTable\css\keyTable.dataTables.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\KeyTable\css\keyTable.foundation.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\KeyTable\css\keyTable.foundation.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\KeyTable\css\keyTable.jqueryui.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\KeyTable\css\keyTable.jqueryui.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Responsive\css\responsive.bootstrap.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Responsive\css\responsive.bootstrap.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Responsive\css\responsive.dataTables.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Responsive\css\responsive.dataTables.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Responsive\css\responsive.foundation.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Responsive\css\responsive.foundation.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Responsive\css\responsive.jqueryui.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Responsive\css\responsive.jqueryui.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\RowReorder\css\rowReorder.bootstrap.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\RowReorder\css\rowReorder.bootstrap.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\RowReorder\css\rowReorder.dataTables.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\RowReorder\css\rowReorder.dataTables.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\RowReorder\css\rowReorder.foundation.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\RowReorder\css\rowReorder.foundation.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\RowReorder\css\rowReorder.jqueryui.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\RowReorder\css\rowReorder.jqueryui.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Scroller\css\scroller.bootstrap.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Scroller\css\scroller.bootstrap.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Scroller\css\scroller.dataTables.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Scroller\css\scroller.dataTables.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Scroller\css\scroller.foundation.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Scroller\css\scroller.foundation.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Scroller\css\scroller.jqueryui.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Scroller\css\scroller.jqueryui.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Select\css\select.bootstrap.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Select\css\select.bootstrap.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Select\css\select.dataTables.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Select\css\select.dataTables.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Select\css\select.foundation.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Select\css\select.foundation.min.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Select\css\select.jqueryui.css" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Select\css\select.jqueryui.min.css" />
+    <Content Include="Content\DataTables-1.10.10\media\css\dataTables.bootstrap.css" />
+    <Content Include="Content\DataTables-1.10.10\media\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\DataTables-1.10.10\media\css\dataTables.foundation.css" />
+    <Content Include="Content\DataTables-1.10.10\media\css\dataTables.foundation.min.css" />
+    <Content Include="Content\DataTables-1.10.10\media\css\dataTables.jqueryui.css" />
+    <Content Include="Content\DataTables-1.10.10\media\css\dataTables.jqueryui.min.css" />
+    <Content Include="Content\DataTables-1.10.10\media\css\jquery.dataTables.css" />
+    <Content Include="Content\DataTables-1.10.10\media\css\jquery.dataTables.min.css" />
+    <Content Include="Content\DataTables-1.10.10\media\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\DataTables-1.10.10\media\images\favicon.ico" />
+    <Content Include="Content\DataTables-1.10.10\media\images\sort_asc.png" />
+    <Content Include="Content\DataTables-1.10.10\media\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTables-1.10.10\media\images\sort_both.png" />
+    <Content Include="Content\DataTables-1.10.10\media\images\sort_desc.png" />
+    <Content Include="Content\DataTables-1.10.10\media\images\sort_desc_disabled.png" />
+    <Content Include="Content\fullcalendar.css" />
+    <Content Include="Content\fullcalendar.min.css" />
+    <Content Include="Content\fullcalendar.print.css" />
+    <Content Include="Content\handsontable\handsontable.css" />
+    <Content Include="Content\handsontable\handsontable.full.css" />
+    <Content Include="Content\handsontable\handsontable.full.min.css" />
+    <Content Include="Content\handsontable\handsontable.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -264,28 +285,75 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <EntityDeploy Include="App_Data\MVC5TemplateModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>MVC5TemplateModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="App_Data\MVC5TemplateModel.edmx.diagram">
-      <DependentUpon>MVC5TemplateModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Scripts\DataTables-1.10.10\media\css\dataTables.bootstrap.css" />
-    <Content Include="Scripts\DataTables-1.10.10\media\css\dataTables.bootstrap.min.css" />
-    <Content Include="Scripts\DataTables-1.10.10\media\css\dataTables.foundation.css" />
-    <Content Include="Scripts\DataTables-1.10.10\media\css\dataTables.foundation.min.css" />
-    <Content Include="Scripts\DataTables-1.10.10\media\css\dataTables.jqueryui.css" />
-    <Content Include="Scripts\DataTables-1.10.10\media\css\dataTables.jqueryui.min.css" />
-    <Content Include="Scripts\DataTables-1.10.10\media\css\jquery.dataTables.css" />
-    <Content Include="Scripts\DataTables-1.10.10\media\css\jquery.dataTables.min.css" />
-    <Content Include="Scripts\DataTables-1.10.10\media\css\jquery.dataTables_themeroller.css" />
-    <Content Include="Scripts\DataTables-1.10.10\media\images\favicon.ico" />
-    <Content Include="Scripts\DataTables-1.10.10\media\images\sort_asc.png" />
-    <Content Include="Scripts\DataTables-1.10.10\media\images\sort_asc_disabled.png" />
-    <Content Include="Scripts\DataTables-1.10.10\media\images\sort_both.png" />
-    <Content Include="Scripts\DataTables-1.10.10\media\images\sort_desc.png" />
-    <Content Include="Scripts\DataTables-1.10.10\media\images\sort_desc_disabled.png" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\AutoFill\js\autoFill.bootstrap.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\AutoFill\js\autoFill.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\AutoFill\js\autoFill.foundation.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\AutoFill\js\autoFill.foundation.min.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\AutoFill\js\autoFill.jqueryui.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\AutoFill\js\autoFill.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\AutoFill\js\dataTables.autoFill.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\AutoFill\js\dataTables.autoFill.min.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Buttons\js\buttons.bootstrap.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Buttons\js\buttons.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Buttons\js\buttons.colVis.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Buttons\js\buttons.colVis.min.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Buttons\js\buttons.flash.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Buttons\js\buttons.flash.min.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Buttons\js\buttons.foundation.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Buttons\js\buttons.foundation.min.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Buttons\js\buttons.html5.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Buttons\js\buttons.html5.min.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Buttons\js\buttons.jqueryui.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Buttons\js\buttons.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Buttons\js\buttons.print.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Buttons\js\buttons.print.min.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Buttons\js\dataTables.buttons.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Buttons\js\dataTables.buttons.min.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Buttons\swf\flashExport.swf" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\ColReorder\js\dataTables.colReorder.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\ColReorder\js\dataTables.colReorder.min.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\FixedColumns\js\dataTables.fixedColumns.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\FixedColumns\js\dataTables.fixedColumns.min.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\FixedHeader\js\dataTables.fixedHeader.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\FixedHeader\js\dataTables.fixedHeader.min.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\KeyTable\js\dataTables.keyTable.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\KeyTable\js\dataTables.keyTable.min.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Responsive\js\dataTables.responsive.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Responsive\js\dataTables.responsive.min.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Responsive\js\responsive.bootstrap.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Responsive\js\responsive.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Responsive\js\responsive.foundation.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Responsive\js\responsive.foundation.min.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Responsive\js\responsive.jqueryui.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Responsive\js\responsive.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\RowReorder\js\dataTables.rowReorder.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\RowReorder\js\dataTables.rowReorder.min.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Scroller\js\dataTables.scroller.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Scroller\js\dataTables.scroller.min.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Select\js\dataTables.select.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Select\js\dataTables.select.min.js" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Select\Readme.md" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Scroller\Readme.md" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\RowReorder\Readme.md" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Responsive\Readme.md" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\KeyTable\Readme.md" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\FixedHeader\Readme.md" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\FixedColumns\Readme.md" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\ColReorder\Readme.md" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\Buttons\Readme.md" />
+    <Content Include="Scripts\DataTables-1.10.10\extensions\AutoFill\Readme.md" />
+    <Content Include="Content\DataTables-1.10.10\media\images\Sorting icons.psd" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Buttons\css\mixins.scss" />
+    <Content Include="Content\DataTables-1.10.10\extensions\Buttons\css\common.scss" />
+    <None Include="Scripts\jquery-2.2.0.intellisense.js" />
+    <Content Include="html\table.html" />
+    <Content Include="html\template.html" />
+    <Content Include="html\calendar.html" />
+    <Content Include="html\index.html" />
+    <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap-datepicker.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\DataTables-1.10.10\media\js\dataTables.bootstrap.js" />
     <Content Include="Scripts\DataTables-1.10.10\media\js\dataTables.bootstrap.min.js" />
     <Content Include="Scripts\DataTables-1.10.10\media\js\dataTables.foundation.js" />
@@ -295,230 +363,13 @@
     <Content Include="Scripts\DataTables-1.10.10\media\js\jquery.dataTables.js" />
     <Content Include="Scripts\DataTables-1.10.10\media\js\jquery.dataTables.min.js" />
     <Content Include="Scripts\DataTables-1.10.10\media\js\jquery.js" />
-    <Content Include="Scripts\handsontable-master\dist\handsontable.css" />
-    <Content Include="Scripts\handsontable-master\dist\handsontable.full.css" />
-    <Content Include="Scripts\handsontable-master\dist\handsontable.full.js" />
-    <Content Include="Scripts\handsontable-master\dist\handsontable.full.min.css" />
-    <Content Include="Scripts\handsontable-master\dist\handsontable.full.min.js" />
-    <Content Include="Scripts\handsontable-master\dist\handsontable.js" />
-    <Content Include="Scripts\handsontable-master\dist\handsontable.min.css" />
-    <Content Include="Scripts\handsontable-master\dist\handsontable.min.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\af.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\ar-ma.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\ar-sa.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\ar-tn.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\ar.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\az.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\be.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\bg.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\bn.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\bo.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\br.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\bs.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\ca.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\cs.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\cv.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\cy.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\da.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\de-at.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\de.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\el.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\en-au.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\en-ca.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\en-gb.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\eo.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\es.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\et.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\eu.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\fa.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\fi.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\fo.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\fr-ca.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\fr.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\fy.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\gl.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\he.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\hi.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\hr.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\hu.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\hy-am.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\id.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\is.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\it.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\ja.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\jv.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\ka.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\km.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\ko.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\lb.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\lt.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\lv.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\me.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\mk.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\ml.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\mr.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\ms-my.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\ms.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\my.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\nb.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\ne.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\nl.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\nn.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\pl.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\pt-br.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\pt.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\ro.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\ru.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\si.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\sk.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\sl.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\sq.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\sr-cyrl.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\sr.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\sv.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\ta.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\th.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\tl-ph.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\tr.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\tzl.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\tzm-latn.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\tzm.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\uk.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\uz.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\vi.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\zh-cn.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\locale\zh-tw.js" />
-    <Content Include="Scripts\handsontable-master\dist\moment\moment.js" />
-    <Content Include="Scripts\handsontable-master\dist\pikaday\pikaday.css" />
-    <Content Include="Scripts\handsontable-master\dist\pikaday\pikaday.js" />
-    <Content Include="Scripts\handsontable-master\dist\zeroclipboard\ZeroClipboard.js" />
-    <Content Include="Scripts\handsontable-master\dist\zeroclipboard\ZeroClipboard.swf" />
-    <Content Include="Scripts\handsontable-master\plugins\bootstrap\handsontable.bootstrap.css" />
-    <Content Include="Scripts\handsontable-master\plugins\jqueryHandsontable.js" />
-    <Content Include="Scripts\handsontable-master\plugins\removeRow\handsontable.removeRow.css" />
-    <Content Include="Scripts\handsontable-master\plugins\removeRow\handsontable.removeRow.js" />
-    <Content Include="Scripts\handsontable-master\plugins\removeRow\test\jquery.handsontable.removeRow.spec.js" />
-    <Content Include="Scripts\examples\handsontable-Example.js" />
-    <Content Include="Scripts\handsontable\index.html" />
-    <Content Include="Scripts\handsontable\Scripts\moment\LICENSE" />
-    <Content Include="Scripts\handsontable\Scripts\pikaday\LICENSE" />
-    <Content Include="Scripts\handsontable\Scripts\zeroclipboard\LICENSE" />
-    <Content Include="Scripts\DataTables-1.10.10\media\images\Sorting icons.psd" />
-    <Content Include="Scripts\handsontable-master\dist\moment\LICENSE" />
-    <Content Include="Scripts\handsontable-master\dist\pikaday\LICENSE" />
-    <Content Include="Scripts\handsontable-master\dist\README.md" />
-    <Content Include="Scripts\handsontable-master\dist\zeroclipboard\LICENSE" />
-    <None Include="Scripts\jquery-2.2.0.intellisense.js" />
-    <Content Include="App_Data\MVC5TemplateModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MVC5TemplateModel.edmx</DependentUpon>
-      <LastGenOutput>MVC5TemplateModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="App_Data\MVC5TemplateModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MVC5TemplateModel.edmx</DependentUpon>
-      <LastGenOutput>MVC5TemplateModel.cs</LastGenOutput>
-    </Content>
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\handsontable\Scripts\handsontable.css" />
-    <Content Include="Scripts\handsontable\Scripts\handsontable.full.css" />
-    <Content Include="Scripts\handsontable\Scripts\handsontable.full.js" />
-    <Content Include="Scripts\handsontable\Scripts\handsontable.full.min.css" />
-    <Content Include="Scripts\handsontable\Scripts\handsontable.full.min.js" />
-    <Content Include="Scripts\handsontable\Scripts\handsontable.js" />
-    <Content Include="Scripts\handsontable\Scripts\handsontable.min.css" />
-    <Content Include="Scripts\handsontable\Scripts\handsontable.min.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\af.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\ar-ma.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\ar-sa.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\ar-tn.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\ar.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\az.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\be.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\bg.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\bn.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\bo.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\br.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\bs.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\ca.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\cs.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\cv.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\cy.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\da.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\de-at.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\de.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\el.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\en-au.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\en-ca.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\en-gb.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\eo.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\es.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\et.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\eu.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\fa.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\fi.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\fo.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\fr-ca.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\fr.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\fy.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\gl.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\he.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\hi.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\hr.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\hu.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\hy-am.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\id.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\is.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\it.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\ja.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\jv.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\ka.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\km.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\ko.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\lb.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\lt.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\lv.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\me.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\mk.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\ml.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\mr.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\ms-my.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\ms.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\my.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\nb.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\ne.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\nl.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\nn.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\pl.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\pt-br.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\pt.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\ro.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\ru.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\si.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\sk.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\sl.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\sq.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\sr-cyrl.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\sr.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\sv.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\ta.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\th.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\tl-ph.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\tr.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\tzl.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\tzm-latn.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\tzm.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\uk.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\uz.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\vi.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\zh-cn.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\locale\zh-tw.js" />
-    <Content Include="Scripts\handsontable\Scripts\moment\moment.js" />
-    <Content Include="Scripts\handsontable\Scripts\pikaday\pikaday.css" />
-    <Content Include="Scripts\handsontable\Scripts\pikaday\pikaday.js" />
-    <Content Include="Scripts\handsontable\Scripts\zeroclipboard\ZeroClipboard.js" />
-    <Content Include="Scripts\handsontable\Scripts\zeroclipboard\ZeroClipboard.swf" />
+    <Content Include="Scripts\fullcalendar.js" />
+    <Content Include="Scripts\fullcalendar.min.js" />
+    <Content Include="Scripts\gcal.js" />
+    <Content Include="Scripts\handsontable\handsontable.full.js" />
+    <Content Include="Scripts\handsontable\handsontable.full.min.js" />
+    <Content Include="Scripts\handsontable\handsontable.js" />
+    <Content Include="Scripts\handsontable\handsontable.min.js" />
     <Content Include="Scripts\html5shiv-printshiv.js" />
     <Content Include="Scripts\html5shiv-printshiv.min.js" />
     <Content Include="Scripts\html5shiv.js" />
@@ -526,65 +377,203 @@
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\lang-all.js" />
+    <Content Include="Scripts\lang\ar-ma.js" />
+    <Content Include="Scripts\lang\ar-sa.js" />
+    <Content Include="Scripts\lang\ar-tn.js" />
+    <Content Include="Scripts\lang\ar.js" />
+    <Content Include="Scripts\lang\bg.js" />
+    <Content Include="Scripts\lang\ca.js" />
+    <Content Include="Scripts\lang\cs.js" />
+    <Content Include="Scripts\lang\da.js" />
+    <Content Include="Scripts\lang\de-at.js" />
+    <Content Include="Scripts\lang\de.js" />
+    <Content Include="Scripts\lang\el.js" />
+    <Content Include="Scripts\lang\en-au.js" />
+    <Content Include="Scripts\lang\en-ca.js" />
+    <Content Include="Scripts\lang\en-gb.js" />
+    <Content Include="Scripts\lang\es.js" />
+    <Content Include="Scripts\lang\fa.js" />
+    <Content Include="Scripts\lang\fi.js" />
+    <Content Include="Scripts\lang\fr-ca.js" />
+    <Content Include="Scripts\lang\fr.js" />
+    <Content Include="Scripts\lang\he.js" />
+    <Content Include="Scripts\lang\hi.js" />
+    <Content Include="Scripts\lang\hr.js" />
+    <Content Include="Scripts\lang\hu.js" />
+    <Content Include="Scripts\lang\id.js" />
+    <Content Include="Scripts\lang\is.js" />
+    <Content Include="Scripts\lang\it.js" />
+    <Content Include="Scripts\lang\ja.js" />
+    <Content Include="Scripts\lang\ko.js" />
+    <Content Include="Scripts\lang\lt.js" />
+    <Content Include="Scripts\lang\lv.js" />
+    <Content Include="Scripts\lang\nb.js" />
+    <Content Include="Scripts\lang\nl.js" />
+    <Content Include="Scripts\lang\pl.js" />
+    <Content Include="Scripts\lang\pt-br.js" />
+    <Content Include="Scripts\lang\pt.js" />
+    <Content Include="Scripts\lang\ro.js" />
+    <Content Include="Scripts\lang\ru.js" />
+    <Content Include="Scripts\lang\sk.js" />
+    <Content Include="Scripts\lang\sl.js" />
+    <Content Include="Scripts\lang\sr-cyrl.js" />
+    <Content Include="Scripts\lang\sr.js" />
+    <Content Include="Scripts\lang\sv.js" />
+    <Content Include="Scripts\lang\th.js" />
+    <Content Include="Scripts\lang\tr.js" />
+    <Content Include="Scripts\lang\uk.js" />
+    <Content Include="Scripts\lang\vi.js" />
+    <Content Include="Scripts\lang\zh-cn.js" />
+    <Content Include="Scripts\lang\zh-tw.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ar.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.az.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.bg.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.bs.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ca.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.cs.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.cy.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.da.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.de.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.el.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.en-GB.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.eo.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.es.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.et.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.eu.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fa.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fi.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fo.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fr-CH.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fr.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.gl.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.he.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.hr.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.hu.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.hy.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.id.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.is.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.it-CH.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.it.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ja.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ka.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.kh.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.kk.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ko.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.kr.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.lt.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.lv.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.me.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.mk.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.mn.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ms.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.nb.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.nl-BE.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.nl.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.no.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pl.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pt-BR.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pt.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ro.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.rs-latin.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.rs.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ru.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sk.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sl.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sq.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sr-latin.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sr.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sv.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sw.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.th.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.tr.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.uk.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.vi.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.zh-CN.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.zh-TW.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\_references.js" />
-    <Content Include="Mock\index.html" />
     <Content Include="Web.config" />
-    <Content Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\ResourceElementValue.Designer.cs" />
+    <Compile Include="App_GlobalResources\ResourceError.Designer.cs" />
+    <Compile Include="App_GlobalResources\ResourceMessage.Designer.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DefaultContoller.cs" />
+    <Compile Include="Controllers\HandsontableController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\WebApiController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomRequiredAttribute.cs" />
+    <Compile Include="Models\DapperManager.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
     </Content>
-    <Content Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Scripts\jquery-2.2.0.min.map" />
+    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_SigninLayout.cshtml" />
     <Content Include="Views\Menu\Index.cshtml" />
     <Content Include="Views\Handsontable\Index.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="App_GlobalResources\ResourceError.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ResourceError.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resource1.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="packages.config" />
-    <Content Include="Scripts\jquery-2.2.0.min.map" />
+    <Folder Include="App_LocalResources\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="App_GlobalResources\ResourceMessage.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ResourceMessage.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\ResourceElementValue.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ResourceElementValue.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_LocalResources\" />
+    <Content Include="App_GlobalResources\ResourceElementValue.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+    </Content>
+    <Content Include="App_GlobalResources\ResourceError.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+    </Content>
+    <Content Include="App_GlobalResources\ResourceMessage.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -593,18 +582,15 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
-  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
-    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
-  </Target>
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>7616</DevelopmentServerPort>
+          <DevelopmentServerPort>6842</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:7616/</IISUrl>
+          <IISUrl>http://localhost:6842/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -621,10 +607,11 @@
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
   <Target Name="AfterBuild">
-  </Target> -->
+  </Target>
+  -->
 </Project>

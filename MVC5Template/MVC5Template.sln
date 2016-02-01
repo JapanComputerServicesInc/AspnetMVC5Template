@@ -3,29 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 14 for Web
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC5Template", "MVC5Template\MVC5Template.csproj", "{5AB18975-129A-40E6-B829-AFB0299E06F9}"
-EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebServiceTemplate", "..\..\Visual Studio 2015\WebSites\WebServiceTemplate\", "{8BC558F7-741B-469B-B3FE-DE489235C489}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_7629"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\Visual Studio 2015\WebSites\WebServiceTemplate\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_7629\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_7629"
-		Release.AspNetCompiler.PhysicalPath = "..\..\Visual Studio 2015\WebSites\WebServiceTemplate\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_7629\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "7629"
-		SlnRelativePath = "..\..\Visual Studio 2015\WebSites\WebServiceTemplate\"
-		DefaultWebSiteLanguage = "Visual C#"
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC5Template", "MVC5Template\MVC5Template.csproj", "{B5D2F312-2D52-4995-A50E-029A7D0BD034}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,14 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5AB18975-129A-40E6-B829-AFB0299E06F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5AB18975-129A-40E6-B829-AFB0299E06F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5AB18975-129A-40E6-B829-AFB0299E06F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5AB18975-129A-40E6-B829-AFB0299E06F9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8BC558F7-741B-469B-B3FE-DE489235C489}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8BC558F7-741B-469B-B3FE-DE489235C489}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8BC558F7-741B-469B-B3FE-DE489235C489}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{8BC558F7-741B-469B-B3FE-DE489235C489}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{B5D2F312-2D52-4995-A50E-029A7D0BD034}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5D2F312-2D52-4995-A50E-029A7D0BD034}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5D2F312-2D52-4995-A50E-029A7D0BD034}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5D2F312-2D52-4995-A50E-029A7D0BD034}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

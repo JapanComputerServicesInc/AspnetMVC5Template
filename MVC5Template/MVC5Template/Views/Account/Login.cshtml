@@ -5,36 +5,35 @@
     ViewBag.Title = "Login";
 }
 
-
-@using (Html.BeginForm("Login", "Account"))
+@using (Html.BeginForm())
 {
-    @Html.ValidationMessage("Login_Error")
-    <div class="container">
-        <h2>@HttpContext.GetGlobalResourceObject("ResourceMessage", "Login_Please_Login")</h2>
-        <div class="form-group">
-            @Html.TextBoxFor(
-                m => m.UserID,
-                new
-                {
-                    id = "inputUserID",
-                    @class = "form-control",
-                    placeholder = HttpContext.GetGlobalResourceObject("ResourceElementValue", "Login_UserID").ToString()
-                })
-            @Html.ValidationMessageFor(m => m.UserID)
+    <div class="row">
+        @Html.ValidationSummary()
+        <div class="placeholder center-block">
+            <h2>@HttpContext.GetGlobalResourceObject("ResourceMessage", "Login_Please_Login")</h2>
+            <div class="form-group">
+                @Html.TextBoxFor(m => m.UserID,
+                    new
+                    {
+                        id = "inputUserID",
+                        @class = "form-control",
+                        placeholder = HttpContext.GetGlobalResourceObject("ResourceElementValue", "Login_UserID").ToString()
+                    })
+                @Html.ValidationMessageFor(m => m.UserID)
+            </div>
+            <div class="form-group">
+                @Html.PasswordFor(m => m.Password,
+                    new
+                    {
+                        id = "inputPassword",
+                        @class = "form-control",
+                        placeholder = HttpContext.GetGlobalResourceObject("ResourceElementValue", "Login_Password").ToString()
+                    })
+                @Html.ValidationMessageFor(m => m.Password)
+            </div>
+            @Html.AntiForgeryToken()
+            <input type="submit" class="btn btn-lg btn-primary btn-block" value="@HttpContext.GetGlobalResourceObject("ResourceElementValue", "Login_btnLogin").ToString()" name="btnLogin" />
         </div>
-        <div class="form-group">
-            @Html.PasswordFor(
-               m => m.Password,
-               new
-               {
-                   id = "inputPassword",
-                   @class = "form-control",
-                   placeholder = HttpContext.GetGlobalResourceObject("ResourceElementValue", "Login_Password").ToString()
-               })
-            @Html.ValidationMessageFor(m => m.Password)
-        </div>
-        @Html.AntiForgeryToken()
-        <input type="submit" class="btn btn-lg btn-primary btn-block" value="@HttpContext.GetGlobalResourceObject("ResourceElementValue", "Login_btnLogin").ToString()" name="btnLogin" />
     </div>
 }
 
