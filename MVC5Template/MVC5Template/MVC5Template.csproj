@@ -509,18 +509,30 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_GlobalResources\ResourceElementValue.Designer.cs" />
-    <Compile Include="App_GlobalResources\ResourceError.Designer.cs" />
-    <Compile Include="App_GlobalResources\ResourceMessage.Designer.cs" />
+    <Compile Include="App_GlobalResources\ResourceElementValue.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceElementValue.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ResourceError.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceError.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ResourceMessage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceMessage.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DefaultContoller.cs" />
+    <Compile Include="Controllers\FormsAuthenticationController.cs" />
     <Compile Include="Controllers\HandsontableController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\WebApiController.cs" />
     <Compile Include="Global.asax.cs">
@@ -545,11 +557,9 @@
     <Content Include="Scripts\jquery-2.2.0.min.map" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_SigninLayout.cshtml" />
-    <Content Include="Views\Menu\Index.cshtml" />
     <Content Include="Views\Handsontable\Index.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\FormsAuthentication\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -565,15 +575,25 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_GlobalResources\ResourceElementValue.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-    </Content>
-    <Content Include="App_GlobalResources\ResourceError.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-    </Content>
-    <Content Include="App_GlobalResources\ResourceMessage.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-    </Content>
+    <EmbeddedResource Include="App_GlobalResources\ResourceMessage.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>ResourceMessage.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\ResourceError.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>ResourceError.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\ResourceElementValue.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>ResourceElementValue.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -586,7 +606,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>6842</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

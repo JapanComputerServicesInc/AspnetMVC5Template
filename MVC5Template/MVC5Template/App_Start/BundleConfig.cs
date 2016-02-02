@@ -7,9 +7,11 @@ namespace MVC5Template
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            // jquery
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
+            // jquery-validate
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
@@ -18,24 +20,54 @@ namespace MVC5Template
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
+            // bootstrap
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
-
-            bundles.Add(new ScriptBundle("~/bundles/html5shiv").Include(
-                      "~/Scripts/html5shiv.js"));
+                        "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                        "~/Content/bootstrap.css",
+                        "~/Content/site.css"));
 
-            // Render Handsontable
+            // html5shiv
+            bundles.Add(new ScriptBundle("~/bundles/ie9-support").Include(
+                        "~/Scripts/html5shiv.js",
+                        "~/Scripts/respond.js"));
+
+            // Handsontable
             bundles.Add(new ScriptBundle("~/bundles/handsontable").Include(
-                        "~/Scripts/handsontable-master/dist/handsontable.full.js"));
+                        "~/Scripts/handsontable/handsontable.js"));
 
             bundles.Add(new StyleBundle("~/Content/handsontable").Include(
-                      "~/Scripts/handsontable-master/dist/handsontable.full.css",
-                      "~/Scripts/handsontable-master/plugins/bootstrap/handsontable.bootstrap.css"));
+                        "~/Content/handsontable/handsontable.css"));
+
+            // DataTables
+            bundles.Add(new ScriptBundle("~/bundles/datatables").Include(
+                        "~/Scripts/DataTables-1.10.10/media/js/dataTables.jqueryui.js"));
+
+            bundles.Add(new StyleBundle("~/Content/datatables").Include(
+                        "~/Content/handsontable/handsontable.css"));
+
+            // moment
+            bundles.Add(new ScriptBundle("~/bundles/moment").Include(
+                        "~/Scripts/moment.js"));
+
+            // fullcalendar
+            bundles.Add(new ScriptBundle("~/bundles/fullcalendar").Include(
+                        "~/Scripts/moment.js",
+                        "~/Scripts/fullcalendar.js"));
+
+            bundles.Add(new StyleBundle("~/Content/fullcalendar").Include(
+                        "~/Content/fullcalendar.css"));
+
+            // bootstrap datepicker
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap-datepicker").Include(
+                        "~/Scripts/bootstrap-datepicker.js",
+                        "~/Scripts/locales/bootstrap-datepicker.ja.min.js"));
+
+            bundles.Add(new StyleBundle("~/Content/bootstrap-datepicker").Include(
+                        "~/Content/bootstrap-datepicker.min.css"));
+
+
         }
     }
 }

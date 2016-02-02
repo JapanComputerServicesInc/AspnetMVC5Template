@@ -1,18 +1,14 @@
-﻿//[assembly: OwinStartup(typeof(MVC5Template.Startup))]
+﻿using Owin;
+using Microsoft.Owin;
+
+[assembly: OwinStartup(typeof(MVC5Template.Startup))]
 
 namespace MVC5Template
 {
     public class Startup
     {
-        //public void Configuration(IAppBuilder app)
-        //{
-            //    // Cookie認証を行う
-            //    app.UseCookieAuthentication(new CookieAuthenticationOptions
-            //    {
-            //        AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-            //        LoginPath = new PathString("/Account/Login")                
-            //    });
-            //}
-        //}
+        public void Configuration(IAppBuilder app)
+        {
+        }
     }
 }
