@@ -64,8 +64,28 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=2.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.2.0.2\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.HttpListener, Version=2.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.HttpListener.2.0.2\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Hosting, Version=2.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Hosting.2.0.2\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.2.3\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Net.Http" />
@@ -80,6 +100,10 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
       <Private>True</Private>
@@ -133,6 +157,7 @@
     <Content Include="App_Data\MVC5Template_log.ldf">
       <DependentUpon>MVC5Template.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\TextFile1.txt" />
     <Content Include="Content\bootstrap-datepicker.css" />
     <Content Include="Content\bootstrap-datepicker.min.css" />
     <Content Include="Content\bootstrap-datepicker.standalone.css" />
@@ -285,6 +310,9 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Scripts\DataTables-1.10.10\extensions\AutoFill\js\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables-1.10.10\extensions\AutoFill\js\autoFill.bootstrap.min.js" />
     <Content Include="Scripts\DataTables-1.10.10\extensions\AutoFill\js\autoFill.foundation.js" />
@@ -345,6 +373,7 @@
     <Content Include="Content\DataTables-1.10.10\media\images\Sorting icons.psd" />
     <Content Include="Content\DataTables-1.10.10\extensions\Buttons\css\mixins.scss" />
     <Content Include="Content\DataTables-1.10.10\extensions\Buttons\css\common.scss" />
+    <None Include="NLog.xsd" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="html\table.html" />
     <Content Include="html\template.html" />
@@ -527,6 +556,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ResultController.cs" />
     <Compile Include="Controllers\DefaultContoller.cs" />
     <Compile Include="Controllers\FormsAuthenticationController.cs" />
     <Compile Include="Controllers\HandsontableController.cs" />
@@ -538,6 +568,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\SampleHelper.cs" />
     <Compile Include="Models\CustomRequiredAttribute.cs" />
     <Compile Include="Models\DapperManager.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
@@ -560,6 +591,7 @@
     <Content Include="Views\Handsontable\Index.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\FormsAuthentication\Index.cshtml" />
+    <Content Include="Views\Result\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -569,6 +601,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\logs\" />
     <Folder Include="App_LocalResources\" />
   </ItemGroup>
   <ItemGroup>

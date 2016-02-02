@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using log4net;
-using log4net.Config;
+using NLog;
 
 namespace MVC5Template.Controllers
 {
     public class DefaultController : Controller
     {
-        protected static readonly ILog log = LogManager.GetLogger(typeof(DefaultController));
+        protected static Logger logger = LogManager.GetCurrentClassLogger();
 
         protected DefaultController() : base()
         {

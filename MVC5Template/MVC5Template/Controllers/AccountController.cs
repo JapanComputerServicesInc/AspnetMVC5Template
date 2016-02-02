@@ -36,7 +36,7 @@ namespace MVC5Template.Controllers
         //
         // POST: /User/Logout
 
-        [HttpPost]
+        [HttpGet]
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
