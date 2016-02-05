@@ -30,6 +30,9 @@ namespace MVC5Template
 
             // Handsontable
             bundles.Add(new ScriptBundle("~/bundles/handsontable").Include(
+                        "~/Scripts/ZeroClipboard.js",
+                        "~/Scripts/pikaday.js",
+                        "~/Scripts/moment.js",
                         "~/Scripts/handsontable/handsontable.js"));
 
             bundles.Add(new StyleBundle("~/Content/handsontable").Include(
