@@ -8,7 +8,7 @@ namespace MVC5Template.Controllers
 {
     public class Html5Controller : Controller
     {
-        // GET: Html5
+        [HttpPost]
         public ActionResult Index()
         {
             return View();

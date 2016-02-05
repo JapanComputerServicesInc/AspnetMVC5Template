@@ -10,22 +10,25 @@ namespace MVC5Template.Controllers
 {
     public class ResultController : DefaultController
     {
-        // GET: ActionReqult
+        [HttpPost]
         public ActionResult Index()
         {
             return View();
         }
 
+        [HttpPost]
         public ActionResult RedirectGoogle()
         {
             return Redirect("https://www.google.co.jp/");
         }
 
+        [HttpPost]
         public ActionResult Home()
         {
             return RedirectToAction("Index", "Home");
         }
 
+        [HttpPost]
         public ActionResult HttpStatus(int code)
         {
             // 抜粋
@@ -46,21 +49,25 @@ namespace MVC5Template.Controllers
             }
         }
 
+        [HttpPost]
         public ActionResult UnAuth()
         {
             return new HttpUnauthorizedResult();
         }
 
+        [HttpPost]
         public ActionResult Empty()
         {
             return new EmptyResult();
         }
 
+        [HttpPost]
         public ActionResult HelloWorld()
         {
             return Content("Hello World!", MediaTypeNames.Text.Plain);
         }
 
+        [HttpPost]
         public ActionResult Download()
         {
             var path = Server.MapPath("~/App_Data/TextFile1.txt");
