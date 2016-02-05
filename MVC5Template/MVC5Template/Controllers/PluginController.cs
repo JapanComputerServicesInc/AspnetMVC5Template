@@ -18,5 +18,20 @@ namespace MVC5Template.Controllers
         {
             return View();
         }
+
+        public new ActionResult Session()
+        {
+            return View();
+        }
+
+        public ActionResult ImageGallery()
+        {
+            return View();
+        }
+
+        public ActionResult FileUpload()
+        {
+            return View();
+        }
     }
 }

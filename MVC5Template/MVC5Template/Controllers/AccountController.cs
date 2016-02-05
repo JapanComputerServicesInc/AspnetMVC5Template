@@ -9,7 +9,8 @@ namespace MVC5Template.Controllers
 {
     public class AccountController : DefaultController
     {
-        public AccountController() : base("AccountController") { }
+        public AccountController() : base("AccountController") {
+        }
 
         [HttpGet]
         public ActionResult Login(string returnUrl)
