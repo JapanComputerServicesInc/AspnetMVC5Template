@@ -10,7 +10,7 @@ namespace MVC5Template.Models
     {
         public DapperManager() { }
 
-        public static dynamic Select(string connectionName, string select, object param)
+        public static dynamic Select(string connectionName, string select, object param = null)
         {
             using (var cn = new DbConnectionFactory(connectionName).Create())
             {
@@ -20,7 +20,7 @@ namespace MVC5Template.Models
             }
         }
 
-        public static IEnumerable<T> Select<T>(string connectionName, string select, object param)
+        public static IEnumerable<T> Select<T>(string connectionName, string select, object param = null)
         {
             using (var cn = new DbConnectionFactory(connectionName).Create())
             {
@@ -30,7 +30,7 @@ namespace MVC5Template.Models
             }
         }
 
-        public static int Update(string connectionName, string update, object param)
+        public static int Update(string connectionName, string update, object param = null)
         {
             using (var cn = new DbConnectionFactory(connectionName).Create())
             {
@@ -53,7 +53,7 @@ namespace MVC5Template.Models
             }
         }
 
-        public static int Insert(string connectionName, string insert, object param)
+        public static int Insert(string connectionName, string insert, object param = null)
         {
             using (var cn = new DbConnectionFactory(connectionName).Create())
             {
@@ -76,7 +76,7 @@ namespace MVC5Template.Models
             }
         }
 
-        public static int Delete(string connectionName, string delete, object param)
+        public static int Delete(string connectionName, string delete, object param = null)
         {
             using (var cn = new DbConnectionFactory(connectionName).Create())
             {

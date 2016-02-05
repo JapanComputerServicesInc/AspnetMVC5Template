@@ -8,31 +8,31 @@ namespace MVC5Template.Controllers
 {
     public class PluginController : Controller
     {
-        [HttpPost]
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
 
-        [HttpPost]
+        [HttpGet]
         public ActionResult Handsontable()
         {
             return View();
         }
 
-        [HttpPost]
+        [HttpGet]
         public new ActionResult Session()
         {
             return View();
         }
 
-        [HttpPost]
+        [HttpGet]
         public ActionResult ImageGallery()
         {
             return View();
         }
 
-        [HttpPost]
+        [HttpGet]
         public ActionResult FileUpload()
         {
             return View();

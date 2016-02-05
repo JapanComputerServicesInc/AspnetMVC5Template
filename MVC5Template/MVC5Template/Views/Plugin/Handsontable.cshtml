@@ -28,32 +28,34 @@
         $(document).ready(function () {
             $(function () {
                 $('#btnLoad').click(function (event) {
-                    event.preventDefault();
-                    var parameter = { connectionName: 'MVC5TemplateServer', sql: 'SELECT * FROM [dbo].[User]' };
-                    $.ajax({
-                        type: "POST",
-                        url: "http://localhost:7629/WebService.asmx/GetJsonData",
-                        data: JSON.stringify(parameter),
-                        datatype: "json",
-                        contentType: 'application/json; charset=utf-8',
-                        success: function (message) {
-                            var jsonData = $.parseJSON(message.d);
-                            hot.loadData(jsonData);
-                        },
-                        error: function () {
-                            alert("Error occured!!")
-                        }
-                    });
+                    $.getJSON("/api/User")
+                        .done(function (data) {
+                            $.each(data, function () {
+                                hot.loadData(data);
+                            });
+                        }).fail(function (xhr, status, error) {
+
+                        });
+                });
+                $('#btnLoad').click(function (event) {
+                    $.getJSON("/api/User")
+                        .done(function (data) {
+                            $.each(data, function () {
+                                hot.loadData(data);
+                            });
+                        }).fail(function (xhr, status, error) {
+                            alert("error");
+                        });
                 });
                 $('#btnSave').click(function (event) {
-                    event.preventDefault();
                     $.ajax({
-                        type: "POST",
-                        url: "http://localhost:7629/WebService.asmx/SetJsonData",
-                        data: JSON.stringify(hot.getData()),
+                        url: "/api/User",
+                        type: "PUT",
+                        data: { "value": JSON.stringify(hot.getData()) },
                         datatype: "json",
                         contentType: 'application/json; charset=utf-8',
                         success: function (message) {
+                            alert(message);
                         },
                         error: function () {
                             alert("Error occured!!")
@@ -62,48 +64,5 @@
                 });
             });
         });
-        //  var cols = 40,
-        //rows = 30,
-        //i, j, len,
-        //data2 = [];
-
-        //  for (i = 0; i < rows; i++) {
-        //      data2[i] = [];
-        //      for (j = 0; j < cols; j++) {
-        //          data2[i].push(j + 1);
-        //      }
-        //  }
-
-        //  var container2 = document.getElementById('example1'),
-        //      hot;
-
-        //  hot = new Handsontable(container2, {
-        //      data: data2,
-        //      colHeaders: true,
-        //      rowHeaders: true
-        //  });
-
-        //  var ex = document.getElementById('example1');
-        //  table = ex.querySelectorAll('table');
-
-        //  function findAncestor(el, cls) {
-        //      while ((el = el.parentElement) && !el.classList.contains(cls)) {
-        //          return el;
-        //      }
-
-        //  }
-
-        //  for (i = 0, len = table.length; i < len; i++) {
-        //      var tableInstance = table[i];
-        //      var isMaster = !!findAncestor(tableInstance, 'ht_master');
-
-        //      Handsontable.Dom.addClass(tableInstance, 'table');
-        //      Handsontable.Dom.addClass(tableInstance, 'table-hover');
-        //      Handsontable.Dom.addClass(tableInstance, 'table-striped');
-
-        //      if (isMaster) {
-        //          Handsontable.Dom.addClass(tableInstance, 'table-bordered');
-        //      }
-        //  }
     </script>
 }
