@@ -37,5 +37,11 @@ namespace MVC5Template.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public ActionResult Calendar()
+        {
+            return View();
+        }
     }
 }
