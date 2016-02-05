@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace MVC5Template.Controllers
 {
-    public class FormsAuthenticationController : Controller
+    public class FormsAuthenticationController : DefaultController
     {
         // GET: FormsAuthentication
         public ActionResult Index()

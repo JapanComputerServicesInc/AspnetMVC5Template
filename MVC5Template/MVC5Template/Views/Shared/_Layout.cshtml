@@ -5,14 +5,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - @HttpContext.GetGlobalResourceObject("ResourceTitle", "Layout_Title")</title>
 
     @Styles.Render("~/Content/css")
     @RenderSection("styles", required: false)
 
     @Scripts.Render("~/bundles/modernizr")
     <!--[if lt IE 9]>
-    @Scripts.Render("~/bundles/ie9-support")
+    <script src="~/Scripts/respond.js"></script>
+    <script src="~/Scripts/html5shiv.js"></script>
     <![endif]-->
 </head>
 <body>
@@ -24,16 +25,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("JCS Sample Appliction", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink(HttpContext.GetGlobalResourceObject("ResourceTitle", "Layout_Title").ToString(), "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink(HttpContext.GetGlobalResourceObject("ResourceElementValue", "Layout_link_Home").ToString(), "Index", "Home")</li>
+                    <li>@Html.ActionLink(HttpContext.GetGlobalResourceObject("ResourceElementValue", "Layout_link_Logout").ToString(), "Logout", "Account")</li>
                 </ul>
             </div>
         </div>
@@ -42,7 +39,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>copyright &copy; @DateTime.Now.Year Japan Computer Services, Inc. All Rights Reserved.</p>
+            <p>@(String.Format(HttpContext.GetGlobalResourceObject("ResourceElementValue", "Layout_CopyRight").ToString(), DateTime.Now.Year))</p>
         </footer>
     </div>
 

@@ -22,7 +22,7 @@ namespace MVC5Template.App_GlobalResources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class ResourceElementValue {
+    internal class ResourceElementValue {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace MVC5Template.App_GlobalResources {
         ///   このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MVC5Template.App_GlobalResources.ResourceElementValue", typeof(ResourceElementValue).Assembly);
@@ -51,39 +51,12 @@ namespace MVC5Template.App_GlobalResources {
         ///   現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   ログイン に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        public static string Login_btnLogin {
-            get {
-                return ResourceManager.GetString("Login_btnLogin", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   パスワード に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        public static string Login_Password {
-            get {
-                return ResourceManager.GetString("Login_Password", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   ユーザーID に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        public static string Login_UserID {
-            get {
-                return ResourceManager.GetString("Login_UserID", resourceCulture);
             }
         }
     }

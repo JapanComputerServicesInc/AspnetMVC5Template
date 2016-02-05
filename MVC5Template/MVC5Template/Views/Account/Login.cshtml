@@ -2,7 +2,7 @@
 
 @{
     Layout = "~/Views/Shared/_SigninLayout.cshtml";
-    ViewBag.Title = "Login";
+    ViewBag.Title = HttpContext.GetGlobalResourceObject("ResourceTitle", "Login_Title");
 }
 
 @using (Html.BeginForm())

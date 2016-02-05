@@ -7,9 +7,11 @@
 
     <title></title>
 
-    <link href="../Content/bootstrap.min.css" rel="stylesheet" />  
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
 
-    <link href="../Content/handsontable/handsontable.min.css" rel="stylesheet" />
+    <!--<link href="../Content/handsontable/handsontable.min.css" rel="stylesheet" />-->
+
+    <link href="../Content/DataTables-1.10.10/media/css/dataTables.bootstrap.css" rel="stylesheet" />
 
     <script src="../Scripts/modernizr-2.8.3.js"></script>
 
@@ -19,9 +21,64 @@
     <![endif]-->
 </head>
 <body>
+    <table id="session" class="table table-striped table-bordered" cellspacing="0">
+        <thead>
+            <tr>
+                <th>AAAAAA</th>
+                <th>BBBBBB</th>
+                <th>CCCCCC</th>
+                <th>DDDDDD</th>
+                <th>EEEEEE</th>
+                <th>FFFFFF</th>
+                <th>GGGGGG</th>
+                <th>HHHHHH</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>AAAAAA</th>
+                <th>BBBBBB</th>
+                <th>CCCCCC</th>
+                <th>DDDDDD</th>
+                <th>EEEEEE</th>
+                <th>FFFFFF</th>
+                <th>GGGGGG</th>
+                <th>HHHHHH</th>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>TEST</td>
+                <td>TEST</td>
+                <td>TEST</td>
+                <td>TEST</td>
+                <td>TEST</td>
+                <td>TEST</td>
+                <td>TEST</td>
+                <td>TEST</td>
+            </tr>
+        </tbody>
+    </table>
     <script src="../Scripts/jquery-2.2.0.min.js"></script>
     <script src="../Scripts/bootstrap.min.js"></script>
-
-    <script src="../Scripts/handsontable/handsontable.min.js"></script>
+    <!--<script src="../Scripts/moment.js"></script>-->
+    <!--<script src="../Scripts/pikaday.js"></script>-->
+    <!--<script src="../Scripts/ZeroClipboard.min.js"></script>-->
+    <!--<script src="../Scripts/handsontable/handsontable.min.js"></script>-->
+    <script src="../Scripts/DataTables-1.10.10/media/js/jquery.dataTables.js"></script>
+    <script src="../Scripts/DataTables-1.10.10/media/js/dataTables.bootstrap.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#session').DataTable({
+                "language": {
+                    "lengthMenu": "Display _MENU_ records per page",
+                    "zeroRecords": "Nothing found - sorry",
+                    "info": "Showing page _PAGE_ of _PAGES_",
+                    "infoEmpty": "No records available",
+                    "infoFiltered": "(filtered from _MAX_ total records)"
+                }
+            });
+        });
+    </script>
 </body>
 </html>

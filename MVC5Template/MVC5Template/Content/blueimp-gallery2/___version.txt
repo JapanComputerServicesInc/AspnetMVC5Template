@@ -1,0 +1,3 @@
+﻿https://github.com/blueimp/Gallery
+Gallery-2.16.0
+2015-009-22

@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace MVC5Template.Controllers
 {
-    public class ResultController : Controller
+    public class ResultController : DefaultController
     {
         // GET: ActionReqult
         public ActionResult Index()

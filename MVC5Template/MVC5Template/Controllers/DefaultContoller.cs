@@ -9,10 +9,15 @@ namespace MVC5Template.Controllers
 {
     public class DefaultController : Controller
     {
-        protected static Logger logger = LogManager.GetCurrentClassLogger();
+        protected static Logger logger;
 
         protected DefaultController() : base()
         {
+
+        }
+        protected DefaultController(string name) : base()
+        {
+            logger = LogManager.GetLogger(name);
         }
 
         protected string ContllorName

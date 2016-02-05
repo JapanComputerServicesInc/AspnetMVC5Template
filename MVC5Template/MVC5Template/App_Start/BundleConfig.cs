@@ -28,11 +28,6 @@ namespace MVC5Template
                         "~/Content/bootstrap.css",
                         "~/Content/site.css"));
 
-            // html5shiv
-            bundles.Add(new ScriptBundle("~/bundles/ie9-support").Include(
-                        "~/Scripts/html5shiv.js",
-                        "~/Scripts/respond.js"));
-
             // Handsontable
             bundles.Add(new ScriptBundle("~/bundles/handsontable").Include(
                         "~/Scripts/handsontable/handsontable.js"));
@@ -42,10 +37,11 @@ namespace MVC5Template
 
             // DataTables
             bundles.Add(new ScriptBundle("~/bundles/datatables").Include(
-                        "~/Scripts/DataTables-1.10.10/media/js/dataTables.jqueryui.js"));
+                        "~/Scripts/DataTables-1.10.10/media/js/jquery.dataTables.js",
+                        "~/Scripts/DataTables-1.10.10/media/js/dataTables.bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/datatables").Include(
-                        "~/Content/handsontable/handsontable.css"));
+                        "~/Content/DataTables-1.10.10/media/css/dataTables.bootstrap.css"));
 
             // moment
             bundles.Add(new ScriptBundle("~/bundles/moment").Include(

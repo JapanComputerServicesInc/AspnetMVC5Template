@@ -3,26 +3,32 @@ using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
 using MVC5Template.Models;
+using System.Web.SessionState;
 
 namespace MVC5Template.Controllers
 {
     public class AccountController : DefaultController
     {
+        public AccountController() : base("AccountController") { }
+
         [HttpGet]
-        public ActionResult Login()
+        public ActionResult Login(string returnUrl)
         {
+            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 
         [HttpPost]
         public ActionResult Login(LoginViewModel model, string returnUrl)
         {
+            logger.Debug("Test");
             IEnumerable<User> result = DapperManager.Select<User>("MVC5TemplateServer",
                 "SELECT UserID FROM [dbo].[User] WHERE UserID = @UserID AND Password = @Password",
                 new { UserID = model.UserID, Password = model.Password });
             if (result.Count() != 0)
             {
-                FormsAuthentication.SetAuthCookie(model.UserID, false);
+                FormsAuthentication.RedirectFromLoginPage(model.UserID, false);
+                //FormsAuthentication.SetAuthCookie(model.UserID, false);
                 return this.Redirect(returnUrl);
             }
             else
@@ -35,8 +41,6 @@ namespace MVC5Template.Controllers
 
         //
         // POST: /User/Logout
-
-        [HttpGet]
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
