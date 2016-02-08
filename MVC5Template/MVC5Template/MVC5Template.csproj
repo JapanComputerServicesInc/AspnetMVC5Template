@@ -440,6 +440,7 @@
     <Content Include="Content\blueimp-gallery2\js\blueimp-gallery-indicator.min.js.map" />
     <Content Include="Content\blueimp-gallery2\js\blueimp-gallery-fullscreen.min.js.map" />
     <Content Include="Content\blueimp-gallery2\ans-blueimp-gallery2-set.min.js.map" />
+    <Content Include="App_Data\MVC5Template.zip" />
     <None Include="NLog.xsd" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
@@ -655,6 +656,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -663,6 +665,7 @@
     <Compile Include="Models\CustomRequiredAttribute.cs" />
     <Compile Include="Models\DapperManager.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\MVC5TemplateContext.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -689,8 +692,10 @@
     <Content Include="Views\Plugin\FileUpload.cshtml" />
     <Content Include="Views\Plugin\Calendar.cshtml" />
     <Content Include="Views\Account\List.cshtml" />
-    <Content Include="Views\Account\Add.cshtml" />
-    <Content Include="Views\Account\Detail.cshtml" />
+    <Content Include="Views\Account\Details.cshtml" />
+    <Content Include="Views\Account\Create.cshtml" />
+    <Content Include="Views\Account\Edit.cshtml" />
+    <Content Include="Views\Account\Delete.cshtml" />
     <Content Include="Views\Users\Create.cshtml" />
     <Content Include="Views\Users\Delete.cshtml" />
     <Content Include="Views\Users\Details.cshtml" />

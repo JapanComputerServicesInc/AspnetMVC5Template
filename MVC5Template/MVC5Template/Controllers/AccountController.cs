@@ -48,26 +48,58 @@ namespace MVC5Template.Controllers
             return this.Redirect("/");
         }
 
-        public ActionResult Add()
-        {
-            return View();
-        }
-
-        public ActionResult Detail()
-        {
-            return View();
-        }
-
         public ActionResult List()
         {
-            IEnumerable<User> result = DapperManager.Select<User>("MVC5TemplateServer",
+            IEnumerable<User> result = DapperManager.Select<User>(
+                "MVC5TemplateServer",
                 "SELECT * FROM [dbo].[User]");
 
             return View(result);
         }
 
-        public ActionResult Delete()
+        public ActionResult Create([Bind(Include = "UserID,Password,FamilyName,FirstName,Birthday,Sex,MobilePhone,PostalCode,Prefectures,City,Address1,Address2,Apartment")] User user)
         {
+            int result = DapperManager.Insert(
+                "MVC5TemplateServer",
+                "INSERT [dbo].[User] VALUES (UserID, Password, FamilyName, FirstName, Birthday, Sex, MobilePhone, PostalCode, Prefectures, City, Address1, Address2, Apartment)", user);
+
+            return View();
+        }
+
+        public ActionResult Detail(int id)
+        {
+            IEnumerable<User> user = DapperManager.Select<User>("MVC5TemplateServer",
+    "SELECT UserID FROM [dbo].[User] WHERE UserID = @UserID",
+    new { UserID = id });
+
+            return View(user.FirstOrDefault());
+        }
+
+        public ActionResult Delete(int id)
+        {
+            int result = DapperManager.Insert(
+                "MVC5TemplateServer",
+                "INSERT [dbo].[User] VALUES (UserID, Password, FamilyName, FirstName, Birthday, Sex, MobilePhone, PostalCode, Prefectures, City, Address1, Address2, Apartment)", new { UserID = id });
+            return View();
+        }
+
+        public ActionResult Edit(string id)
+        {
+            return View();
+        }
+
+        public ActionResult Edit(int? id)
+        {
+            User user = DapperManager.Select<User>("MVC5TemplateServer",
+                "SELECT UserID FROM [dbo].[User] WHERE UserID = @UserID",
+                new { UserID = id }).FirstOrDefault();
+
+            return View(user);
+        }
+
+        public ActionResult Edit([Bind(Include = "UserID,Password,FamilyName,FirstName,Birthday,Sex,MobilePhone,PostalCode,Prefectures,City,Address1,Address2,Apartment")] User user)
+        {
+            int result = DapperManager.Update("MVC5TemplateServer", "UPDATE [dbo].[User] SET Password = @Password, FamilyName = @FamilyName, FirstName = @FirstName, Birthday = @Birthday, Sex = @Sex, MobilePhone = @MobilePhone, PostalCode = @PostalCode, Prefectures = @Prefectures, City = @City, Address1 = @Address1, Address2 = @Address2, Apartment = @Apartment", user);
             return View();
         }
     }
