@@ -39,7 +39,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>@(String.Format(HttpContext.GetGlobalResourceObject("ResourceElementValue", "Layout_CopyRight").ToString(), DateTime.Now.Year))</p>
+            <p>@(Html.Raw(String.Format(HttpContext.GetGlobalResourceObject("ResourceElementValue", "Layout_CopyRight").ToString(), DateTime.Now.Year)))</p>
         </footer>
     </div>
 

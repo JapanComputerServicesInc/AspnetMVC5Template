@@ -681,7 +681,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-2.2.0.min.map" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_SigninLayout.cshtml" />
+    <Content Include="Views\Shared\_LoginLayout.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\FormsAuthentication\Index.cshtml" />
     <Content Include="Views\Result\Index.cshtml" />
@@ -691,16 +691,11 @@
     <Content Include="Views\Plugin\ImageGallery.cshtml" />
     <Content Include="Views\Plugin\FileUpload.cshtml" />
     <Content Include="Views\Plugin\Calendar.cshtml" />
-    <Content Include="Views\Account\List.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Account\Details.cshtml" />
     <Content Include="Views\Account\Create.cshtml" />
     <Content Include="Views\Account\Edit.cshtml" />
     <Content Include="Views\Account\Delete.cshtml" />
-    <Content Include="Views\Users\Create.cshtml" />
-    <Content Include="Views\Users\Delete.cshtml" />
-    <Content Include="Views\Users\Details.cshtml" />
-    <Content Include="Views\Users\Edit.cshtml" />
-    <Content Include="Views\Users\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>

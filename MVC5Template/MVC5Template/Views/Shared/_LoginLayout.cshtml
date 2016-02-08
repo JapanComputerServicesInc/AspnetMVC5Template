@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@ViewBag.Title - @HttpContext.GetGlobalResourceObject("ResourceTitle", "Layout_Title")</title>
+
+    @Styles.Render("~/Content/css")
+    @RenderSection("styles", required: false)
+
+    @Scripts.Render("~/bundles/modernizr")
+    <!--[if lt IE 9]>
+    <script src="~/Scripts/respond.js"></script>
+    <script src="~/Scripts/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>@(Html.Raw(String.Format(HttpContext.GetGlobalResourceObject("ResourceElementValue", "Layout_CopyRight").ToString(), DateTime.Now.Year)))</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

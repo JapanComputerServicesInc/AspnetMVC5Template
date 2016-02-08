@@ -13,13 +13,13 @@ namespace MVC5Template.Controllers
         // GET: api/User
         public IEnumerable<User> Get()
         {
-            return DapperManager.Select<User>("MVC5TemplateServer", "SELECT * FROM [dbo].[User]");
+            return DapperManager.Query<User>("MVC5TemplateServer", "SELECT * FROM [dbo].[User]");
         }
 
         // GET: api/User/5
         public IEnumerable<User> Get(int id)
         {
-            return DapperManager.Select<User>("MVC5TemplateServer", "SELECT * FROM [dbo].[User] WHERE UserID = @UserID AND Password = @Password", new { UserID = id });
+            return DapperManager.Query<User>("MVC5TemplateServer", "SELECT * FROM [dbo].[User] WHERE UserID = @UserID AND Password = @Password", new { UserID = id });
         }
 
         // POST: api/User
