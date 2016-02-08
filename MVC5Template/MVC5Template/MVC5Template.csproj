@@ -434,10 +434,6 @@
     <Content Include="Content\blueimp-gallery2\ans-blueimp-gallery2-set.min.js.map" />
     <None Include="NLog.xsd" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
-    <Content Include="html\table.html" />
-    <Content Include="html\template.html" />
-    <Content Include="html\calendar.html" />
-    <Content Include="html\index.html" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap-datepicker.min.js" />
     <Content Include="Scripts\bootstrap.js" />
