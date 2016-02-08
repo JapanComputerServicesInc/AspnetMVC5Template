@@ -9,7 +9,8 @@ namespace MVC5Template.Controllers
 {
     public class AccountController : DefaultController
     {
-        public AccountController() : base("AccountController") {
+        public AccountController() : base("AccountController")
+        {
         }
 
         [HttpGet]
@@ -45,6 +46,29 @@ namespace MVC5Template.Controllers
         {
             FormsAuthentication.SignOut();
             return this.Redirect("/");
+        }
+
+        public ActionResult Add()
+        {
+            return View();
+        }
+
+        public ActionResult Detail()
+        {
+            return View();
+        }
+
+        public ActionResult List()
+        {
+            IEnumerable<User> result = DapperManager.Select<User>("MVC5TemplateServer",
+                "SELECT * FROM [dbo].[User]");
+
+            return View(result);
+        }
+
+        public ActionResult Delete()
+        {
+            return View();
         }
     }
 }
