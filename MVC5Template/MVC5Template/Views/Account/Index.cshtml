@@ -5,7 +5,7 @@
 }
 
 <p>
-    @Html.ActionLink("Create New", "Create", "", new { @class = "btn btn-default" })
+    @Html.ActionLink("Create New", "Create", "", new { @class = "btn btn-link" })
 </p>
 <table id="session" class="table table-striped table-bordered" cellspacing="0">
     <thead>
@@ -140,9 +140,9 @@
                     @Html.DisplayFor(modelItem => item.Apartment)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.UserID }, new { @class = "btn btn-default" })
-                    @Html.ActionLink("Details", "Details", new { id = item.UserID }, new { @class = "btn btn-default" })
-                    @Html.ActionLink("Delete", "Delete", new { id = item.UserID }, new { @class = "btn btn-default" })
+                    @Html.ActionLink("Edit", "Edit", new { id = item.UserID }, new { @class = "btn btn-link" })
+                    @Html.ActionLink("Details", "Details", new { id = item.UserID }, new { @class = "btn btn-link" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.UserID }, new { @class = "btn btn-link" })
                 </td>
             </tr>
         }

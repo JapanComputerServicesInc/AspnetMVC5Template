@@ -4,6 +4,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using MVC5Template.Models;
 using System.Web.SessionState;
+using System.Net;
 
 namespace MVC5Template.Controllers
 {
@@ -31,27 +32,48 @@ namespace MVC5Template.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "UserID,Password,FamilyName,FirstName,Birthday,Sex,MobilePhone,PostalCode,Prefectures,City,Address1,Address2,Apartment")] User user)
         {
-            int result = DapperManager.Execute(
-                "MVC5TemplateServer",
-                "INSERT [dbo].[User] (UserID, Password, FamilyName, FirstName, Birthday, Sex, MobilePhone, PostalCode, Prefectures, City, Address1, Address2, Apartment) VALUES (@UserID, @Password, @FamilyName, @FirstName, @Birthday, @Sex, @MobilePhone, @PostalCode, @Prefectures, @City, @Address1, @Address2, @Apartment)", user);
+            if (ModelState.IsValid)
+            {
+                int result = DapperManager.Execute(
+                    "MVC5TemplateServer",
+                    "INSERT [dbo].[User] (UserID, Password, FamilyName, FirstName, Birthday, Sex, MobilePhone, PostalCode, Prefectures, City, Address1, Address2, Apartment) VALUES (@UserID, @Password, @FamilyName, @FirstName, @Birthday, @Sex, @MobilePhone, @PostalCode, @Prefectures, @City, @Address1, @Address2, @Apartment)", user);
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+            return View(user);
         }
 
         public ActionResult Details(int? id)
         {
-            IEnumerable<User> user = DapperManager.Query<User>("MVC5TemplateServer",
-    "SELECT * FROM [dbo].[User] WHERE UserID = @UserID",
-    new { UserID = id });
-
-            return View(user.FirstOrDefault());
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            else
+            {
+                IEnumerable<User> user = DapperManager.Query<User>("MVC5TemplateServer", "SELECT * FROM [dbo].[User] WHERE UserID = @UserID", new { UserID = id });
+                if (user == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(user.FirstOrDefault());
+            }
         }
 
         public ActionResult Delete(int? id)
         {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
             User user = DapperManager.Query<User>("MVC5TemplateServer",
-                "SELECT * FROM [dbo].[User] WHERE UserID = @UserID",
-                new { UserID = id }).FirstOrDefault();
+            "SELECT * FROM [dbo].[User] WHERE UserID = @UserID",
+            new { UserID = id }).FirstOrDefault();
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
             return View(user);
         }
 
@@ -68,10 +90,17 @@ namespace MVC5Template.Controllers
         [HttpGet]
         public ActionResult Edit(int? id)
         {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
             User user = DapperManager.Query<User>("MVC5TemplateServer",
                 "SELECT * FROM [dbo].[User] WHERE UserID = @UserID",
                 new { UserID = id }).FirstOrDefault();
-
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
             return View(user);
         }
 
@@ -79,8 +108,12 @@ namespace MVC5Template.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "UserID,Password,FamilyName,FirstName,Birthday,Sex,MobilePhone,PostalCode,Prefectures,City,Address1,Address2,Apartment")] User user)
         {
-            int result = DapperManager.Execute("MVC5TemplateServer", "UPDATE [dbo].[User] SET Password = @Password, FamilyName = @FamilyName, FirstName = @FirstName, Birthday = @Birthday, Sex = @Sex, MobilePhone = @MobilePhone, PostalCode = @PostalCode, Prefectures = @Prefectures, City = @City, Address1 = @Address1, Address2 = @Address2, Apartment = @Apartment WHERE UserID = @UserID", user);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                int result = DapperManager.Execute("MVC5TemplateServer", "UPDATE [dbo].[User] SET Password = @Password, FamilyName = @FamilyName, FirstName = @FirstName, Birthday = @Birthday, Sex = @Sex, MobilePhone = @MobilePhone, PostalCode = @PostalCode, Prefectures = @Prefectures, City = @City, Address1 = @Address1, Address2 = @Address2, Apartment = @Apartment WHERE UserID = @UserID", user);
+                return RedirectToAction("Index");
+            }
+            return View(user);
         }
 
         [AllowAnonymous]
