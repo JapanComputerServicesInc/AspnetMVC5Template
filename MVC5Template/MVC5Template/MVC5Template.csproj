@@ -441,6 +441,7 @@
     <Content Include="Content\blueimp-gallery2\js\blueimp-gallery-fullscreen.min.js.map" />
     <Content Include="Content\blueimp-gallery2\ans-blueimp-gallery2-set.min.js.map" />
     <Content Include="App_Data\MVC5Template.zip" />
+    <Content Include="Json\template.json" />
     <None Include="NLog.xsd" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
@@ -646,7 +647,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\Html5Controller.cs" />
+    <Compile Include="Controllers\JsonController.cs" />
     <Compile Include="Controllers\PluginController.cs" />
     <Compile Include="Controllers\ResultController.cs" />
     <Compile Include="Controllers\DefaultContoller.cs" />
@@ -656,15 +657,19 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Filters\ErrorLog.cs" />
+    <Compile Include="Filters\LoggingAttribute.cs" />
+    <Compile Include="Filters\LoggingErrorAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\LocalizationHelpers.cs" />
     <Compile Include="Helpers\SampleHelper.cs" />
-    <Compile Include="Models\CustomRequiredAttribute.cs" />
-    <Compile Include="Models\DapperManager.cs" />
+    <Compile Include="Filters\CustomRequiredAttribute.cs" />
+    <Compile Include="Dapper\DapperManager.cs" />
+    <Compile Include="Json\JsonConverter.cs" />
+    <Compile Include="Json\JsonManager.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
-    <Compile Include="Models\MVC5TemplateContext.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -685,7 +690,6 @@
     <Content Include="Views\FormsAuthentication\Index.cshtml" />
     <Content Include="Views\Result\Index.cshtml" />
     <Content Include="Views\Plugin\Session.cshtml" />
-    <Content Include="Views\Html5\Index.cshtml" />
     <Content Include="Views\Plugin\Handsontable.cshtml" />
     <Content Include="Views\Plugin\ImageGallery.cshtml" />
     <Content Include="Views\Plugin\FileUpload.cshtml" />
@@ -695,6 +699,7 @@
     <Content Include="Views\Account\Create.cshtml" />
     <Content Include="Views\Account\Edit.cshtml" />
     <Content Include="Views\Account\Delete.cshtml" />
+    <Content Include="Views\Json\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>

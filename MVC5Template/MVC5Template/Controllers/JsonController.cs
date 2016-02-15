@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Newtonsoft.Json;
 
 namespace MVC5Template.Controllers
 {
-    public class Html5Controller : Controller
+    public class JsonController : Controller
     {
-        [HttpPost]
+        // GET: Json
         public ActionResult Index()
         {
             return View();

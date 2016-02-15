@@ -4,9 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using NLog;
+using MVC5Template.Filters;
 
 namespace MVC5Template.Controllers
 {
+    [Logging]
+    [LoggingError]
     public class DefaultController : Controller
     {
         protected static Logger logger;

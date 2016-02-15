@@ -31,7 +31,6 @@
                     })
                 @Html.ValidationMessageFor(m => m.Password)
             </div>
-            @Html.AntiForgeryToken()
             <input type="submit" class="btn btn-lg btn-primary btn-block" value="@HttpContext.GetGlobalResourceObject("ResourceElementValue", "Login_btnLogin").ToString()" name="btnLogin" />
         </div>
     </div>
