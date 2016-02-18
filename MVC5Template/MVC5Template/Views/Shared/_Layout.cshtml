@@ -11,6 +11,7 @@
     @RenderSection("styles", required: false)
 
     @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("header_scripts", required: false)
     <!--[if lt IE 9]>
     <script src="~/Scripts/respond.js"></script>
     <script src="~/Scripts/html5shiv.js"></script>
@@ -45,6 +46,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/myApp")
     @RenderSection("scripts", required: false)
 </body>
 </html>

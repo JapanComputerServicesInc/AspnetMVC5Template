@@ -8,7 +8,7 @@ using System.Web.Http;
 
 namespace MVC5Template.Controllers
 {
-    public class UserController : ApiController
+    public class UserController : DefaultApiController
     {
         // GET: api/User
         public IEnumerable<User> Get()

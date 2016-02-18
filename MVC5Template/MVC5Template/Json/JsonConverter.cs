@@ -15,6 +15,8 @@ namespace MVC5Template.Json
             _types = types;
         }
 
+        public JsonConverter() { }
+
         public override bool CanConvert(Type objectType)
         {
             return _types.Any(t => t == objectType);

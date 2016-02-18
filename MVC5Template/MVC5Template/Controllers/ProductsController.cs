@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace ProductsApp.Controllers
 {
-    public class ProductsController : ApiController
+    public class ProductsController : MVC5Template.Controllers.DefaultApiController
     {
         Product[] products = new Product[] 
         { 

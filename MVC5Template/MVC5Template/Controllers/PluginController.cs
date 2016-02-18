@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace MVC5Template.Controllers
 {
-    public class PluginController : Controller
+    public class PluginController : DefaultController
     {
         [HttpGet]
         public ActionResult Index()

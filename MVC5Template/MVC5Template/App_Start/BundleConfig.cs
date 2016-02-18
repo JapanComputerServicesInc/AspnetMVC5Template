@@ -7,6 +7,10 @@ namespace MVC5Template
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            // myApp
+            bundles.Add(new ScriptBundle("~/bundles/myApp").Include(
+                        "~/Scripts/myApp.js"));
+
             // jquery
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
@@ -31,7 +35,7 @@ namespace MVC5Template
             // Handsontable
             bundles.Add(new ScriptBundle("~/bundles/handsontable").Include(
                         "~/Scripts/ZeroClipboard.js",
-                        "~/Scripts/pikaday.js",
+                        "~/Scripts/Pikaday/pikaday.js",
                         "~/Scripts/moment.js",
                         "~/Scripts/handsontable/handsontable.js"));
 
@@ -39,12 +43,12 @@ namespace MVC5Template
                         "~/Content/handsontable/handsontable.css"));
 
             // DataTables
-            bundles.Add(new ScriptBundle("~/bundles/datatables").Include(
-                        "~/Scripts/DataTables-1.10.10/media/js/jquery.dataTables.js",
-                        "~/Scripts/DataTables-1.10.10/media/js/dataTables.bootstrap.js"));
+            bundles.Add(new ScriptBundle("~/bundles/datatables").IncludeDirectory(
+                        "~/Scripts", "jquery.dataTables.js", true).IncludeDirectory(
+                        "~/Scripts", "dataTables.bootstrap.js", true));
 
-            bundles.Add(new StyleBundle("~/Content/datatables").Include(
-                        "~/Content/DataTables-1.10.10/media/css/dataTables.bootstrap.css"));
+            bundles.Add(new StyleBundle("~/Content/datatables").IncludeDirectory(
+                        "~/Content", "dataTables.bootstrap.css", true));
 
             // moment
             bundles.Add(new ScriptBundle("~/bundles/moment").Include(

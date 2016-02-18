@@ -119,7 +119,7 @@ namespace MVC5Template.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
-            ViewBag.ReturnUrl = returnUrl;
+            ViewBag.ReturnUrl = string.Empty;
             return View();
         }
 
@@ -153,6 +153,7 @@ namespace MVC5Template.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
+            
             return this.Redirect("/");
         }
     }

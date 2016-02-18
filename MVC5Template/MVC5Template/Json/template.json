@@ -1,8 +1,14 @@
 ﻿{
   "request_date": "2015/02/01 00:00:00",
-  "request_parameter": [],
+  "request_parameter": {
+    "UserID": "",
+    "Password": "",
+    "FamilyName": "",
+    "FirstName": ""
+  },
   "response_date": "",
-  "result_code": "OK",
-  "result": [],
-  "response_error_code": ""
+  "result": {
+    "result_code": "OK",
+    "response_error_code": ""
+  },
 }
