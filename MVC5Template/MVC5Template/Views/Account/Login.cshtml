@@ -5,13 +5,28 @@
     ViewBag.Title = HttpContext.GetGlobalResourceObject("ResourceTitle", "Login_Title");
 }
 
+@section styles {
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        .container {
+            height: 100%;
+        }
+
+        .row {
+            padding-top: 200px;
+            padding-bottom: 200px;
+        }
+    </style>
+}
 @using (Html.BeginForm())
 {
     <div class="row">
-        @Html.ValidationSummary()
-        <div class="placeholder center-block">
-            <h2>@HttpContext.GetGlobalResourceObject("ResourceMessage", "Login_Please_Login")</h2>
-            <div class="form-group">
+        @*@Html.ValidationSummary()*@
+        <div class="placeholder well center-block">
+            <div class="form-group text-center">
                 @Html.TextBoxFor(m => m.UserID,
                     new
                     {
@@ -19,9 +34,9 @@
                         @class = "form-control",
                         placeholder = HttpContext.GetGlobalResourceObject("ResourceElementValue", "Login_UserID").ToString()
                     })
-                @Html.ValidationMessageFor(m => m.UserID)
+                @Html.ValidationMessageFor(m => m.UserID, "", new { @class = "text-danger" })
             </div>
-            <div class="form-group">
+            <div class="form-group center-block">
                 @Html.PasswordFor(m => m.Password,
                     new
                     {
@@ -29,7 +44,7 @@
                         @class = "form-control",
                         placeholder = HttpContext.GetGlobalResourceObject("ResourceElementValue", "Login_Password").ToString()
                     })
-                @Html.ValidationMessageFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
             </div>
             <input type="submit" class="btn btn-lg btn-primary btn-block" value="@HttpContext.GetGlobalResourceObject("ResourceElementValue", "Login_btnLogin").ToString()" name="btnLogin" />
         </div>
