@@ -153,7 +153,8 @@ namespace MVC5Template.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            
+            Session.Clear();
+
             return this.Redirect("/");
         }
     }
