@@ -49,39 +49,42 @@ ASP.NET MVC5のテンプレート
  - EntityFramework(使う必要なし)
 
 ## 使用モジュール
-### テンプレートエンジン
-* Razor
+* テンプレートエンジン
+ 
+ - Razor
 
-### HTML, CSS, JavaScript フレームワーク
+* HTML, CSS, JavaScript フレームワーク
 
-* Bootstrap
+ - Bootstrap
 
-### JavaScript ライブラリ
+* JavaScript ライブラリ
 
-* jQuery  
+ - jQuery  
 
-* jQuery-Validate  
+ - jQuery-Validate  
 
-* modernizr  
+ - modernizr  
 
-* moment  
+ - moment  
 
-* pikaday  
+ - pikaday  
 
-* respond  
+ - respond  
 
-* ZeroClipboard  
+ - ZeroClipboard  
 
-* html5shiv  
+ - html5shiv  
 
-* Bootstrap-DatePicker  
+ - Bootstrap-DatePicker  
 
-### Excel Like JavaScript ライブラリ
+* Excel Like JavaScript ライブラリ
 
-* Handsontable
+ - Handsontable
 
-### SQLライブラリ
-* Dapper
+* SQLライブラリ
 
-### ログ
-* NLog
+ - Dapper
+
+* ログ
+
+ - NLog
