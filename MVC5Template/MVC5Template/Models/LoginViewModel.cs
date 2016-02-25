@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace MVC5Template.Models
 {
