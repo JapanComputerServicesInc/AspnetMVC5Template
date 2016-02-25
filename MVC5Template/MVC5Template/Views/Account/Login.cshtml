@@ -24,12 +24,16 @@
 @using (Html.BeginForm())
 {
     <div class="row">
+        <div class="placeholder center-block">
+            @Html.ValidationMessage("Login_Error", new { @class = "text-danger" })
+        </div>
         @*@Html.ValidationSummary()*@
         <div class="placeholder well center-block">
             <div class="form-group text-center">
                 @Html.TextBoxFor(m => m.UserID,
                     new
                     {
+                        maxlength = "6",
                         id = "inputUserID",
                         @class = "form-control",
                         placeholder = HttpContext.GetGlobalResourceObject("ResourceElementValue", "Login_UserID").ToString()
@@ -40,6 +44,7 @@
                 @Html.PasswordFor(m => m.Password,
                     new
                     {
+                        maxlength = "30",
                         id = "inputPassword",
                         @class = "form-control",
                         placeholder = HttpContext.GetGlobalResourceObject("ResourceElementValue", "Login_Password").ToString()

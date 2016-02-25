@@ -1,13 +1,9 @@
-﻿using NLog;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using MVC5Template.Extension;
 
-namespace MVC5Template.Controllers
+namespace MVC5Template.Areas.Site.Controllers
 {
-    public class HomeController : DefaultController
+    public class HomeController : SupportContoller
     {
         public ActionResult Index()
         {

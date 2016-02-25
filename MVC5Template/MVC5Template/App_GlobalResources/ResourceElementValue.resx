@@ -141,4 +141,7 @@
   <data name="Session_SessionValue" xml:space="preserve">
     <value>セッション値</value>
   </data>
+  <data name="Layout_link_Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
 </root>

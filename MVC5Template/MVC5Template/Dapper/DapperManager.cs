@@ -1,11 +1,10 @@
 ﻿using Dapper;
 using System;
 using System.Data.Common;
-using System.Text;
 using System.Collections.Generic;
 using NLog;
 
-namespace MVC5Template.Models
+namespace MVC5Template.Dapper
 {
     public class DapperManager
     {

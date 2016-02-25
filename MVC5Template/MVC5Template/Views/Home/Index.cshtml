@@ -1,33 +1,13 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = HttpContext.GetGlobalResourceObject("ResourceTitle", "Login_Title");
 }
 
 <div class="jumbotron"></div>
 <div class="row">
     <div class="col-md-4">
-
-        <p>@Html.ActionLink("ユーザー一覧画面", "Index", "Account", "", new { @class = "btn btn-default" })</p>
-        <p class="lead">ちょっと動く</p>
-        <p>@Html.ActionLink("Handsontable", "Handsontable", "Plugin", "", new { @class = "btn btn-default" })</p>
+        <p>@Html.ActionLink("ユーザー一覧画面", "Index", "User", new { area = "Admin" }, new { @class = "btn btn-default" })</p>
         <br />
-        <p class="lead">ちょっと動く</p>
-        <p>@Html.ActionLink("Calendar", "Calendar", "Plugin", "", new { @class = "btn btn-default" })</p>
-        <br />
-        <p class="lead">おまけ：未完成</p>
-        <p>@Html.ActionLink("ImageGallery", "ImageGallery", "Plugin", "", new { @class = "btn btn-default" })</p>
-        <br />
-        <p class="lead">認証系：クッキー情報表示</p>
-        <p>@Html.ActionLink("FormsAuthentication", "Index", "FormsAuthentication", "", new { @class = "btn btn-default" })</p>
-        <br />
-        <p class="lead">セッションの情報を表示する</p>
-        <p>@Html.ActionLink("Session", "Session", "Plugin", "", new { @class = "btn btn-default" })</p>
-        <br />
-        <p class="lead">未完成</p>
-        <p>@Html.ActionLink("ResultSample", "Index", "ResultSample", "", new { @class = "btn btn-default" })</p>
-        <br />
-
-        <p class="lead">未完成</p>
-        <p>@Html.ActionLink("JsonSample", "Index", "JsonSample", "", new { @class = "btn btn-default" })</p>
+        <p>@Html.ActionLink("サンプルアプリ", "Index", "SampleHome", new { area = "Sample" }, new { @class = "btn btn-default" })</p>
         <br />
     </div>
 </div>

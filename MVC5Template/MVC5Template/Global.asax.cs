@@ -11,10 +11,9 @@ namespace MVC5Template
     {
         void Application_Start(object sender, EventArgs e)
         {
-            GlobalConfiguration.Configure(WebApiConfig.Register);
             // アプリケーションのスタートアップで実行するコードです
             AreaRegistration.RegisterAllAreas();
-
+            GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);

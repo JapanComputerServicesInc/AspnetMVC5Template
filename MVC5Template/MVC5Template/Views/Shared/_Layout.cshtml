@@ -30,8 +30,9 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink(HttpContext.GetGlobalResourceObject("ResourceElementValue", "Layout_link_Home").ToString(), "Index", "Home")</li>
-                    <li>@Html.ActionLink(HttpContext.GetGlobalResourceObject("ResourceElementValue", "Layout_link_Logout").ToString(), "Logout", "Account")</li>
+                    <li>@Html.ActionLink(HttpContext.GetGlobalResourceObject("ResourceElementValue", "Layout_link_Home").ToString(), "Index", "Home", new { area = "" }, null)</li>
+                    <li><a href="#" onclick="history.back(); return false;">@(HttpContext.GetGlobalResourceObject("ResourceElementValue", "Layout_link_Back").ToString())</a></li>
+                    <li>@Html.ActionLink(HttpContext.GetGlobalResourceObject("ResourceElementValue", "Layout_link_Logout").ToString(), "Logout", "Account", new { area = "" }, null)</li>
                 </ul>
             </div>
         </div>
