@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = HttpContext.GetGlobalResourceObject("ResourceTitle", "Login_Title");
+}
+
+<!-- https://github.com/blueimp/jQuery-File-Upload -->
+
+
+@section styles {
+    @Styles.Render("~/Content/handsontable")
+}
+
+@section scripts {
+    <script src="~/Scripts/jquery-ui-1.11.4.js"></script>
+    <script src="~/Scripts/jQuery.FileUpload/jquery.iframe-transport.js"></script>
+    <script src="~/Scripts/jQuery.FileUpload/jquery.fileupload.js"></script>
+    <script>
+        $(function () {
+            $('#fileupload').fileupload({
+                dataType: 'json',
+                done: function (e, data) {
+                    $.each(data.result.files, function (index, file) {
+                        $('<p/>').text(file.name).appendTo(document.body);
+                    });
+                }
+            });
+        });
+    </script>
+}
+
+<input id="fileupload" type="file" name="files[]" data-url="./App_Data/data" multiple>

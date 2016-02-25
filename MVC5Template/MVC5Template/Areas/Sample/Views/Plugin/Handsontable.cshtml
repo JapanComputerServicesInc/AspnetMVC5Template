@@ -1,0 +1,69 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = HttpContext.GetGlobalResourceObject("ResourceTitle", "Login_Title");
+}
+
+<div class="container">
+    <input type="button" id="btnLoad" value="Load" class="btn btn-primary btn-block" />
+    <input type="button" id="btnSave" value="Save" class="btn btn-primary btn-block" />
+
+    <div id="myTable"></div>
+
+</div>
+
+<div id="test"></div>
+
+@section styles {
+    @Styles.Render("~/Content/handsontable")
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/handsontable")
+    <script>
+        var container = document.getElementById('myTable');
+        var hot = new Handsontable(container, {
+            rowHeaders: true,
+            colHeaders: true
+        });
+
+        $(document).ready(function () {
+            $(function () {
+                $('#btnLoad').click(function (event) {
+                    $.getJSON("/api/User")
+                        .done(function (data) {
+                            $.each(data, function () {
+                                hot.loadData(data);
+                            });
+                        }).fail(function (xhr, status, error) {
+
+                        });
+                });
+                $('#btnLoad').click(function (event) {
+                    $.getJSON("/api/User")
+                        .done(function (data) {
+                            $.each(data, function () {
+                                hot.loadData(data);
+                            });
+                        }).fail(function (xhr, status, error) {
+                            alert("error");
+                        });
+                });
+                $('#btnSave').click(function (event) {
+                    $.ajax({
+                        url: "/api/User",
+                        type: "PUT",
+                        data: { "value": JSON.stringify(hot.getData()) },
+                        datatype: "json",
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (message) {
+                            alert(message);
+                        },
+                        error: function () {
+                            alert("Error occured!!")
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+}

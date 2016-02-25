@@ -1,0 +1,56 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = HttpContext.GetGlobalResourceObject("ResourceTitle", "Login_Title");
+}
+
+@section styles {
+    @Styles.Render("~/Content/bootstrap-datepicker")
+    @Styles.Render("~/Content/fullcalendar")
+}
+<form>
+    <!-- http://fullcalendar.io/ -->
+    <div class="row">
+        <h1>FullCalendar</h1>
+        <div id="fullcalendar"></div>
+    </div>
+
+    <!-- http://www.eyecon.ro/bootstrap-datepicker/ -->
+    <div class="input-group date">
+        <h1>Bootstrap - DatePicker</h1>
+        <input type="text" id="bootstrap-datepicker" class="form-control" />
+    </div>
+</form>
+@section scripts {
+    @Scripts.Render("~/bundles/bootstrap-datepicker")
+    @Scripts.Render("~/bundles/fullcalendar")
+    <script>
+        $(function () {
+            $('#fullcalendar').fullCalendar({
+                header: {
+                    left: 'prev,next today myCustomButton',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                customButtons: {
+                    myCustomButton: {
+                        text: 'custom!',
+                        click: function () {
+                            alert("ヤッホー");
+                        },
+                        icon: {},
+                        themeIcon: {}
+                    }
+                },
+                firstDay: 0,
+                weekends: true,
+                hiddenDays: [],
+                lang: 'ja'
+            });
+            $('#bootstrap-datepicker').datepicker({
+                //format: 'yyyy/mm/dd',
+                //startDate: '-3d',
+                language: 'ja'
+            });
+        });
+    </script>
+}
