@@ -11,6 +11,7 @@
     @RenderSection("styles", required: false)
 
     @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("header_scripts", required: false)
     <!--[if lt IE 9]>
     <script src="~/Scripts/respond.js"></script>
     <script src="~/Scripts/html5shiv.js"></script>
@@ -18,20 +19,19 @@
 </head>
 <body>
     <div class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                @Html.Label(HttpContext.GetGlobalResourceObject("ResourceTitle", "Layout_Title").ToString(), new { @class = "navbar-text" })
-            </div>
+        <div class="navbar-header">
+            @Html.Label(HttpContext.GetGlobalResourceObject("ResourceTitle", "Layout_Title").ToString(), new { @class = "navbar-text" })
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>@(Html.Raw(String.Format(HttpContext.GetGlobalResourceObject("ResourceElementValue", "Layout_CopyRight").ToString(), DateTime.Now.Year)))</p>
-        </footer>
+    <div class="container">
+        <div class="contents">
+            @RenderBody()
+        </div>
     </div>
-
+    <div class="footer navbar-fixed-bottom">
+        <hr />
+        <p>@(Html.Raw(String.Format(HttpContext.GetGlobalResourceObject("ResourceElementValue", "Layout_CopyRight").ToString(), DateTime.Now.Year)))</p>
+    </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
