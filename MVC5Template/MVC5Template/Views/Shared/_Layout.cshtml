@@ -35,16 +35,12 @@
             </ul>
         </div>
     </div>
-    <div class="container">
-        <div class="contents">
-            @RenderBody()
-        </div>
+    <div class="contents">
+        @RenderBody()
     </div>
-    <div class="">
-        <div class="footer">
-            <hr />
-            <div class="text-center">@(Html.Raw(String.Format(HttpContext.GetGlobalResourceObject("ResourceElementValue", "Layout_CopyRight").ToString(), DateTime.Now.Year)))</div>
-        </div>
+    <div class="footer">
+        <hr />
+        <div class="text-center">@(Html.Raw(String.Format(HttpContext.GetGlobalResourceObject("ResourceElementValue", "Layout_CopyRight").ToString(), DateTime.Now.Year)))</div>
     </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

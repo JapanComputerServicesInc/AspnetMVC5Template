@@ -7,19 +7,7 @@
     @Styles.Render("~/Content/bootstrap-datepicker")
     @Styles.Render("~/Content/fullcalendar")
 }
-<form>
-    <!-- http://fullcalendar.io/ -->
-    <div class="row">
-        <h1>FullCalendar</h1>
-        <div id="fullcalendar"></div>
-    </div>
 
-    <!-- http://www.eyecon.ro/bootstrap-datepicker/ -->
-    <div class="input-group date">
-        <h1>Bootstrap - DatePicker</h1>
-        <input type="text" id="bootstrap-datepicker" class="form-control" />
-    </div>
-</form>
 @section scripts {
     @Scripts.Render("~/bundles/bootstrap-datepicker")
     @Scripts.Render("~/bundles/fullcalendar")
@@ -54,3 +42,19 @@
         });
     </script>
 }
+
+<div class="container">
+    <form>
+        <!-- http://fullcalendar.io/ -->
+        <div class="row">
+            <h1>FullCalendar</h1>
+            <div id="fullcalendar"></div>
+        </div>
+
+        <!-- http://www.eyecon.ro/bootstrap-datepicker/ -->
+        <div class="input-group date">
+            <h1>Bootstrap - DatePicker</h1>
+            <input type="text" id="bootstrap-datepicker" class="form-control" />
+        </div>
+    </form>
+</div>

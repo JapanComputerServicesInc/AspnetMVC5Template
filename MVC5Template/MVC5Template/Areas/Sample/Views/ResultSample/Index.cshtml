@@ -3,16 +3,18 @@
     ViewBag.Title = HttpContext.GetGlobalResourceObject("ResourceTitle", "Login_Title");
 }
 
-@Html.ActionLink("Google", "RedirectGoogle", new { }, new { @class = "btn btn-default" })
+<div class="container">
+    @Html.ActionLink("Google", "RedirectGoogle", new { }, new { @class = "btn btn-default" })
 
-@Html.ActionLink("Home", "Home", new { }, new { @class = "btn btn-default" })
+    @Html.ActionLink("Home", "Home", new { }, new { @class = "btn btn-default" })
 
-@Html.ActionLink("HttpStatus", "HttpStatus", new { }, new { @class = "btn btn-default" })
+    @Html.ActionLink("HttpStatus", "HttpStatus", new { }, new { @class = "btn btn-default" })
 
-@Html.ActionLink("UnAuth", "UnAuth", new { }, new { @class = "btn btn-default" })
+    @Html.ActionLink("UnAuth", "UnAuth", new { }, new { @class = "btn btn-default" })
 
-@Html.ActionLink("Empty", "Empty", new { }, new { @class = "btn btn-default" })
+    @Html.ActionLink("Empty", "Empty", new { }, new { @class = "btn btn-default" })
 
-@Html.ActionLink("HelloWorld", "HelloWorld", new { }, new { @class = "btn btn-default" })
+    @Html.ActionLink("HelloWorld", "HelloWorld", new { }, new { @class = "btn btn-default" })
 
-@Html.ActionLink("Download", "Download", new { }, new { @class = "btn btn-default" })
+    @Html.ActionLink("Download", "Download", new { }, new { @class = "btn btn-default" })
+</div>

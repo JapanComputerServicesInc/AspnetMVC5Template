@@ -2,12 +2,16 @@
     ViewBag.Title = HttpContext.GetGlobalResourceObject("ResourceTitle", "Login_Title");
 }
 
-<div class="jumbotron"></div>
-<div class="row">
-    <div class="col-md-4">
-        <p>@Html.ActionLink("ユーザー一覧画面", "Index", "User", new { area = "Admin" }, new { @class = "btn btn-default" })</p>
-        <br />
-        <p>@Html.ActionLink("サンプルアプリ", "Index", "SampleHome", new { area = "Sample" }, new { @class = "btn btn-default" })</p>
-        <br />
+<div class="container">
+    <div class="jumbotron">
+        サンプルページ
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <p>@Html.ActionLink("ユーザー一覧画面", "Index", "User", new { area = "Admin" }, new { @class = "btn btn-default" })</p>
+            <br />
+            <p>@Html.ActionLink("サンプルアプリ", "Index", "SampleHome", new { area = "Sample" }, new { @class = "btn btn-default" })</p>
+            <br />
+        </div>
     </div>
 </div>
