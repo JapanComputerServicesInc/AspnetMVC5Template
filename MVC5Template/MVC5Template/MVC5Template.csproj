@@ -63,10 +63,6 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -489,6 +485,7 @@
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Sample\Views\web.config" />
     <Content Include="Areas\Sample\Views\SampleHome\Index.cshtml" />
+    <Content Include="Areas\Sample\Views\Exception\Index.cshtml" />
     <None Include="NLog.xsd" />
     <Content Include="Scripts\DataTables-1.10.11\extensions\AutoFill\js\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables-1.10.11\extensions\AutoFill\js\autoFill.bootstrap.min.js" />
@@ -695,17 +692,17 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Sample\Controllers\SampleHomeController.cs" />
+    <Compile Include="Areas\Sample\Controllers\ExceptionController.cs" />
     <Compile Include="Areas\Sample\SampleAreaRegistration.cs" />
     <Compile Include="Areas\WebApi\WebApiAreaRegistration.cs" />
-    <Compile Include="Extension\DefaultController.cs" />
     <Compile Include="Areas\Site\SiteAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Areas\Sample\Controllers\ConvertController.cs" />
-    <Compile Include="Extension\SupportApiController.cs" />
+    <Compile Include="Extensions\SupportApiController.cs" />
     <Compile Include="Areas\Sample\Controllers\JsonSampleController.cs" />
     <Compile Include="Areas\Sample\Controllers\PluginController.cs" />
     <Compile Include="Areas\Sample\Controllers\ResultSampleController.cs" />
-    <Compile Include="Extension\SupportContoller.cs" />
+    <Compile Include="Extensions\SupportContoller.cs" />
     <Compile Include="Areas\Sample\Controllers\FormsAuthenticationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -719,8 +716,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Dapper\DapperManager.cs" />
-    <Compile Include="Extension\JsonConverter.cs" />
-    <Compile Include="Extension\JsonManager.cs" />
+    <Compile Include="Extensions\JsonConverter.cs" />
+    <Compile Include="Extensions\JsonManager.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -744,6 +741,7 @@
     <Content Include="Areas\Sample\Views\Plugin\FileUpload.cshtml" />
     <Content Include="Areas\Sample\Views\Plugin\Calendar.cshtml" />
     <Content Include="Areas\Sample\Views\JsonSample\Index.cshtml" />
+    <Content Include="Views\Shared\_ErrorLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>

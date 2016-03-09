@@ -9,9 +9,13 @@
     <link href="~/Content/App_Style/Login.css" rel="stylesheet" />
 }
 
-@using (Html.BeginForm())
-{
-    <div class="container">
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval");
+}
+
+<div class="container">
+    @using (Html.BeginForm())
+    {
         @*@Html.ValidationSummary()*@
         <div class="placeholder center-block">
             @Html.ValidationMessage("Login_Error", new { @class = "text-danger" })
@@ -41,9 +45,5 @@
                 <input type="submit" class="btn btn-lg btn-primary btn-block" value="@HttpContext.GetGlobalResourceObject("ResourceElementValue", "Login_btnLogin").ToString()" name="btnLogin" />
             </div>
         </div>
-    </div>
-}
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval");
-}
+    }
+</div>

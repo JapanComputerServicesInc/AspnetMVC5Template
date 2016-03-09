@@ -1,26 +1,32 @@
 ﻿@model System.Web.Mvc.HandleErrorInfo
 
 @{
+    Layout = "~/Views/Shared/_ErrorLayout.cshtml";
     ViewBag.Title = "エラー";
     FormsAuthentication.SignOut();
     Session.Clear();
 }
+<div class="container">
+    <h2>要求の処理中にエラーが発生しました。</h2>
 
-<h2>要求の処理中にエラーが発生しました。</h2>
+    <table class="table">
+        <tr>
+            <th>発生時刻</th>
+            <td>@(DateTime.Now)</td>
+        </tr>
+        <tr>
+            <th>発生元</th>
+            <td>@Model.ControllerName / @Model.ActionName</td>
+        </tr>
+        <tr>
+            <th>例外</th>
+            <td>@Model.Exception.GetType().Name</td>
+        </tr>
+        <tr>
+            <th>メッセージ</th>
+            <td>@Model.Exception.Message</td>
+        </tr>
+    </table>
 
-<table class="table">
-    <tr>
-        <th>発生元</th>
-        <td>@Model.ControllerName / @Model.ActionName</td>
-    </tr>
-    <tr>
-        <th>例外</th>
-        <td>@Model.Exception.GetType().Name</td>
-    </tr>
-    <tr>
-        <th>メッセージ</th>
-        <td>@Model.Exception.Message</td>
-    </tr>
-</table>
-
-@Html.ActionLink("Login", "Login", "Account", new { @class = "btn-default" })
+    @Html.ActionLink("Login", "Login", "Account", new { area = "" }, new { @class = "btn btn-default" })
+</div>

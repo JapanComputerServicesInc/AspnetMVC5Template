@@ -4,8 +4,9 @@ using System.Web.Mvc;
 using System.Web.Security;
 using System.Net;
 using MVC5Template.Dapper;
-using MVC5Template.Extension;
+using MVC5Template.Extensions;
 using MVC5Template.Models;
+using NLog;
 
 namespace MVC5Template.Controllers
 {
@@ -34,8 +35,7 @@ namespace MVC5Template.Controllers
                 {
                     FormsAuthentication.RedirectFromLoginPage(model.UserID, false);
                     //FormsAuthentication.SetAuthCookie(model.UserID, false);
-                    if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/") && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
-                        return this.Redirect(returnUrl);
+                    //if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/") && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\")) return this.Redirect(returnUrl);
                     return RedirectToAction(string.Empty, "Home");
                 }
                 else
