@@ -1,5 +1,5 @@
 ﻿using MVC5Template.Dapper;
-using MVC5Template.Extension;
+using MVC5Template.Extensions;
 using MVC5Template.Models;
 using System.Collections.Generic;
 using System.Web.Http;

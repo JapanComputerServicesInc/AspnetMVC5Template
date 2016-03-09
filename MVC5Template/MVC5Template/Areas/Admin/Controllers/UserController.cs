@@ -1,4 +1,5 @@
 ﻿using MVC5Template.Dapper;
+using MVC5Template.Extensions;
 using MVC5Template.Models;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Web.Mvc;
 
 namespace MVC5Template.Areas.Admin.Controllers
 {
-    public class UserController : Controller
+    public class UserController : SupportContoller
     {
         public ActionResult Index()
         {

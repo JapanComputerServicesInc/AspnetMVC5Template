@@ -1,4 +1,4 @@
-﻿using MVC5Template.Extension;
+﻿using MVC5Template.Extensions;
 using System.Web.Mvc;
 
 namespace MVC5Template.Areas.Sample.Controllers

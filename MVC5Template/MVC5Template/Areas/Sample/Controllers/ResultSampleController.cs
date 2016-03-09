@@ -1,4 +1,4 @@
-﻿using MVC5Template.Extension;
+﻿using MVC5Template.Extensions;
 using System.Net;
 using System.Net.Mime;
 using System.Web.Mvc;
