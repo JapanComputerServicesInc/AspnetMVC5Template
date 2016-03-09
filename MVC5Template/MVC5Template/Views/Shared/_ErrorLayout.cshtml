@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@ViewBag.Title - @HttpContext.GetGlobalResourceObject("ResourceTitle", "Layout_Title")</title>
+
+    @Styles.Render("~/Content/css")
+    @RenderSection("styles", required: false)
+
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("header_scripts", required: false)
+    <!--[if lt IE 9]>
+    <script src="~/Scripts/respond.js"></script>
+    <script src="~/Scripts/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="header">
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="navbar-header">
+                @Html.Label(HttpContext.GetGlobalResourceObject("ResourceTitle", "Layout_Title").ToString(), new { @class = "navbar-text" })
+            </div>
+        </div>
+    </div>
+    <div class="contents">
+        @RenderBody()
+    </div>
+    <div class="footer">
+        <hr />
+        <div class="text-center">@(Html.Raw(String.Format(HttpContext.GetGlobalResourceObject("ResourceElementValue", "Layout_CopyRight").ToString(), DateTime.Now.Year)))</div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/myApp")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
