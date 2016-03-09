@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using MVC5Template.Extensions;
 using System.Web.Mvc;
-using MVC5Template.Extensions;
 
 namespace MVC5Template.Areas.Sample.Controllers
 {

@@ -1,7 +1,5 @@
-﻿using MVC5Template.Extensions;
-using NLog;
+﻿using NLog;
 using System;
-using System.Net;
 using System.Text;
 using System.Web.Mvc;
 

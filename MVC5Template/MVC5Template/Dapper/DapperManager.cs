@@ -1,8 +1,7 @@
 ﻿using Dapper;
-using System;
+using NLog;
 using System.Data.Common;
 using System.Collections.Generic;
-using NLog;
 using System.Text;
 
 namespace MVC5Template.Dapper

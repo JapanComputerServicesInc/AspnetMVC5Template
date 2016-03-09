@@ -1,12 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using MVC5Template.Dapper;
+using MVC5Template.Extensions;
+using MVC5Template.Models;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
-using System.Net;
-using MVC5Template.Dapper;
-using MVC5Template.Extensions;
-using MVC5Template.Models;
-using NLog;
 
 namespace MVC5Template.Controllers
 {

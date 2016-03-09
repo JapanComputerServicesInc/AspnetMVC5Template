@@ -1,6 +1,6 @@
-﻿using System.Web.Mvc;
-using NLog;
+﻿using NLog;
 using MVC5Template.Filters;
+using System.Web.Mvc;
 
 namespace MVC5Template.Extensions
 {
