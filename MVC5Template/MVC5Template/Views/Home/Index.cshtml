@@ -3,15 +3,21 @@
 }
 
 <div class="container">
-    <div class="jumbotron">
-        サンプルページ
-    </div>
     <div class="row">
         <div class="col-md-4">
-            <p>@Html.ActionLink("ユーザー一覧画面", "Index", "User", new { area = "Admin" }, new { @class = "btn btn-default" })</p>
-            <br />
-            <p>@Html.ActionLink("サンプルアプリ", "Index", "SampleHome", new { area = "Sample" }, new { @class = "btn btn-default" })</p>
-            <br />
+            <h2>ユーザー一覧画面</h2>
+            <p>
+                ユーザーの一覧、登録、削除、編集、詳細のサンプル画面。<br />
+                一覧の表示には<a href="https://datatables.net/" target="_blank">datatables</a>を使用している。
+            </p>
+            <p>@Html.ActionLink("ユーザー一覧画面", "Index", "User", new { area = "Admin" }, new { @class = "btn btn-primary" })</p>
+        </div>
+        <div class="col-md-4">
+            <h2>サンプルアプリ</h2>
+            <p>
+                サンプルアプリケーションを作成する場合は、リンク先の画面に作成してください。
+            </p>
+            @Html.ActionLink("サンプルアプリ", "Index", "SampleHome", new { area = "Sample" }, new { @class = "btn btn-primary" })
         </div>
     </div>
 </div>

@@ -6,29 +6,69 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-            <p class="lead">ちょっと動く</p>
-            <p>@Html.ActionLink("Handsontable", "Handsontable", "Plugin", new { area = "Sample" }, new { @class = "btn btn-default" })</p>
-            <br />
-            <p class="lead">ちょっと動く</p>
-            <p>@Html.ActionLink("Calendar", "Calendar", "Plugin", new { area = "Sample" }, new { @class = "btn btn-default" })</p>
-            <br />
-            <p class="lead">おまけ：未完成</p>
-            <p>@Html.ActionLink("ImageGallery", "ImageGallery", "Plugin", new { area = "Sample" }, new { @class = "btn btn-default" })</p>
-            <br />
-            <p class="lead">認証系：クッキー情報表示</p>
-            <p>@Html.ActionLink("FormsAuthentication", "Index", "FormsAuthentication", new { area = "Sample" }, new { @class = "btn btn-default" })</p>
-            <br />
-            <p class="lead">セッションの情報を表示する</p>
-            <p>@Html.ActionLink("Session", "Session", "Plugin", new { area = "Sample" }, new { @class = "btn btn-default" })</p>
-            <br />
-            <p class="lead">未完成</p>
-            <p>@Html.ActionLink("ResultSample", "Index", "ResultSample", new { area = "Sample" }, new { @class = "btn btn-default" })</p>
-            <br />
-            <p class="lead">未完成</p>
-            <p>@Html.ActionLink("JsonSample", "Index", "JsonSample", new { area = "Sample" }, new { @class = "btn btn-default" })</p>
-            <br />
-            <p>@Html.ActionLink("Exception", "Index", "Exception", new { area = "Sample" }, new { @class = "btn btn-default" })</p>
-            <br />
+            <h2><a href="https://handsontable.com/" target="_blank">Handsontable</a></h2>
+            <p>
+                Handsontableのサンプル。<br />
+                動きはするが、まだ作成中の段階。
+            </p>
+            <p>@Html.ActionLink("Handsontable", "Handsontable", "Plugin", new { area = "Sample" }, new { @class = "btn btn-primary" })</p>
+        </div>
+        <div class="col-md-4">
+            <h2>Calendar</h2>
+            <p>
+                <a href="http://fullcalendar.io/" target="_blank">FullCalendar</a>と<a href="https://eonasdan.github.io/bootstrap-datetimepicker/" target="_blank">Bootstrap-DatePicker</a>のサンプル。<br />
+                FullCalendarは現在は表示しているだけ。DatePickerは日本語化対応されている。
+            </p>
+            <p>@Html.ActionLink("Calendar", "Calendar", "Plugin", new { area = "Sample" }, new { @class = "btn btn-primary" })</p>
+        </div>
+        <div class="col-md-4">
+            <h2><a href="https://blueimp.github.io/Gallery/" target="_blank">ImageGallery</a></h2>
+            <p>
+                blueimp Galleryという、イメージ＆ビデオ用のギャラリーを表示できるサンプル。<br />
+                少しだけ、挙動がおかしいところがあるが、動いてはいる。
+            </p>
+            <p>@Html.ActionLink("ImageGallery", "ImageGallery", "Plugin", new { area = "Sample" }, new { @class = "btn btn-primary" })</p>
+        </div>
+        <div class="col-md-4">
+            <h2>FormsAuthentication</h2>
+            <p>
+                クッキー情報を表示してくれるサンプル。<br />
+                ログイン情報等、表示させている。
+            </p>
+            <p>@Html.ActionLink("FormsAuthentication", "Index", "FormsAuthentication", new { area = "Sample" }, new { @class = "btn btn-primary" })</p>
+        </div>
+        <div class="col-md-4">
+            <h2>Session</h2>
+            <p>
+                セッションに値を入れて、それを表示させるサンプル。<br />
+                一覧の表示には<a href="https://datatables.net/" target="_blank">datatables</a>を使用している。
+            </p>
+            <p>@Html.ActionLink("Session", "Session", "Plugin", new { area = "Sample" }, new { @class = "btn btn-primary" })</p>
+        </div>
+        <div class="col-md-4">
+            <h2>ResultSample</h2>
+            <p>
+                アクション時の結果を通知する方法を見せるための、サンプル。<br />
+                いらないかも。
+            </p>
+            <p>@Html.ActionLink("ResultSample", "Index", "ResultSample", new { area = "Sample" }, new { @class = "btn btn-primary" })</p>
+        </div>
+        <div class="col-md-4">
+            <h2>C# to Json</h2>
+            <p> 
+                ModelからJsonを作成してくれるサンプル。<br />
+                便利だと思われるが、まだ試作段階。<br />
+                <a href="http://json2csharp.com/">json2csharp</a>このこのサイトの機能を参考に作ってみている。
+            </p>
+            <p>@Html.ActionLink("JsonSample", "Index", "JsonSample", new { area = "Sample" }, new { @class = "btn btn-primary" })</p>
+        </div>
+        <div class="col-md-4">
+            <h2>Exception</h2>
+            <p>
+                ボタンをクリックすると、Exceptionが発生する。<br />
+                テスト用。
+            </p>
+            <p>@Html.ActionLink("Exception", "Index", "Exception", new { area = "Sample" }, new { @class = "btn btn-primary" })</p>
         </div>
     </div>
 </div>
