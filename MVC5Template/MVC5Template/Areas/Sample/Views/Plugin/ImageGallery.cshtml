@@ -1,4 +1,5 @@
-﻿@{
+﻿@model System.String[]
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = HttpContext.GetGlobalResourceObject("ResourceTitle", "Login_Title");
 }
@@ -6,11 +7,21 @@
 @section Styles
 {
     <link href="~/Content/blueimp-gallery2/css/blueimp-gallery.css" rel="stylesheet" />
+    <link href="~/Content/blueimp-gallery2/css/blueimp-gallery-indicator.css" rel="stylesheet" />
+    <link href="~/Content/blueimp-gallery2/css/blueimp-gallery-video.css" rel="stylesheet" />
+    <link href="~/Content/App_Style/PluginImageGallery.css" rel="stylesheet" />
 }
 
 @section Scripts
 {
+    <script src="~/Content/blueimp-gallery2/js/blueimp-helper.js"></script>
     <script src="~/Content/blueimp-gallery2/js/blueimp-gallery.js"></script>
+    <script src="~/Content/blueimp-gallery2/js/blueimp-gallery-fullscreen.js"></script>
+    <script src="~/Content/blueimp-gallery2/js/blueimp-gallery-indicator.js"></script>
+    <script src="~/Content/blueimp-gallery2/js/blueimp-gallery-video.js"></script>
+    <script src="~/Content/blueimp-gallery2/js/blueimp-gallery-vimeo.js"></script>
+    <script src="~/Content/blueimp-gallery2/js/blueimp-gallery-youtube.min.js"></script>
+    <script src="~/Content/blueimp-gallery2/js/jquery.blueimp-gallery.js"></script>
     <script>
         document.getElementById('links').onclick = function (event) {
             event = event || window.event;
@@ -20,6 +31,13 @@
                 links = this.getElementsByTagName('a');
             blueimp.Gallery(links, options);
         };
+        blueimp.Gallery(
+            document.getElementById('links').getElementsByTagName('a'),
+            {
+                container: '#blueimp-gallery-carousel',
+                carousel: true
+            }
+        );
     </script>
 }
 
@@ -36,15 +54,21 @@
         <ol class="indicator"></ol>
     </div>
 
+    <div id="blueimp-gallery-carousel" class="blueimp-gallery blueimp-gallery-carousel">
+        <div class="slides"></div>
+        <h3 class="title"></h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="play-pause"></a>
+        <ol class="indicator"></ol>
+    </div>
+
     <div id="links">
-        <a href="images/banana.jpg" title="Banana">
-            <img src="images/thumbnails/banana.jpg" alt="Banana">
-        </a>
-        <a href="images/apple.jpg" title="Apple">
-            <img src="images/thumbnails/apple.jpg" alt="Apple">
-        </a>
-        <a href="images/orange.jpg" title="Orange">
-            <img src="images/thumbnails/orange.jpg" alt="Orange">
-        </a>
+        @foreach (var file in Model)
+        {
+            <a href="@file" title="ネコ" data-gallery>
+                <img src="@file" alt="@file" />
+            </a>
+        }
     </div>
 </div>

@@ -1,4 +1,5 @@
 ﻿using MVC5Template.Extensions;
+using System.IO;
 using System.Web.Mvc;
 
 namespace MVC5Template.Areas.Sample.Controllers
@@ -26,7 +27,16 @@ namespace MVC5Template.Areas.Sample.Controllers
         [HttpGet]
         public ActionResult ImageGallery()
         {
-            return View();
+            string mapPath = Server.MapPath("/");
+            string imageDir = mapPath + "/Content/Images/";
+            string[] files = Directory.GetFiles(imageDir, "*.jpg", System.IO.SearchOption.AllDirectories);
+            for(int i = 0; i < files.Length; i++)
+            {
+                var file = files[i];
+                file = file.Replace(mapPath, "");
+                files[i] = file;
+            }
+            return View(files);
         }
 
         [HttpGet]
