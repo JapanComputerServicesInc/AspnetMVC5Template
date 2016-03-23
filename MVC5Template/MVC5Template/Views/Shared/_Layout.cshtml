@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var userInfo = (MVC5Template.Models.User)Session["UserInfo"];
+}
+
+<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="utf-8" />
@@ -34,6 +38,11 @@
                     <li><a href="#" onclick="history.back(); return false;">@(HttpContext.GetGlobalResourceObject("ResourceElementValue", "Layout_link_Back").ToString())</a></li>
                     <li>@Html.ActionLink(HttpContext.GetGlobalResourceObject("ResourceElementValue", "Layout_link_Logout").ToString(), "Logout", "Account", new { area = "" }, null)</li>
                 </ul>
+                <div class="navbar-text navbar-right">
+                    <div class="user-info">
+                        @(userInfo.FamilyName + " " + userInfo.FirstName)(@userInfo.UserID)
+                    </div>
+                </div>
             </div>
         </div>
     </div>

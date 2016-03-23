@@ -1,14 +1,15 @@
 ﻿html, body {
+    font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
+    height: 100%;
     margin: 0px;
     padding: 0px;
-    height: 100%;
     width: 100%;
 }
 
 div.footer {
     background: #FFFFFF;
-    padding-top: 10px;
     padding-bottom: 10px;
+    padding-top: 10px;
 }
 
     div.footer p {
@@ -16,5 +17,11 @@ div.footer {
     }
 
 div.contents {
-    padding-top: 50px;
+    padding-top: 55px;
+}
+
+div.user-info {
+    color: black;
+    font-size: 13px;
+    padding-right: 30px;
 }

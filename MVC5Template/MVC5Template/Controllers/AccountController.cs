@@ -27,10 +27,11 @@ namespace MVC5Template.Controllers
             if (ModelState.IsValid)
             {
                 IEnumerable<User> result = DapperManager.Query<User>("MVC5TemplateServer",
-                    "SELECT UserID FROM [dbo].[User] WHERE UserID = @UserID AND Password = @Password",
+                    "SELECT UserID, FamilyName, FirstName FROM [dbo].[User] WHERE UserID = @UserID AND Password = @Password",
                     new { UserID = model.UserID, Password = model.Password });
                 if (result.Count() != 0)
                 {
+                    Session.Add("UserInfo", result.First());
                     FormsAuthentication.RedirectFromLoginPage(model.UserID, false);
                     //FormsAuthentication.SetAuthCookie(model.UserID, false);
                     //if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/") && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\")) return this.Redirect(returnUrl);
