@@ -170,6 +170,7 @@
     <Content Include="App_Data\MVC5Template_log.ldf">
       <DependentUpon>MVC5Template.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\App_Style\Error.css" />
     <Content Include="Content\App_Style\PluginImageGallery.css" />
     <Content Include="Content\blueimp-gallery2\ans-blueimp-gallery2-set.js" />
     <Content Include="Content\blueimp-gallery2\ans-blueimp-gallery2-set.min.js" />
