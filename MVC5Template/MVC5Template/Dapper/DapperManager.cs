@@ -6,30 +6,53 @@ using System.Text;
 
 namespace MVC5Template.Dapper
 {
+    /// <summary>
+    /// Micro-ORM Dapperの機能を提供します。
+    /// </summary>
     public class DapperManager
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
         public DapperManager() { }
 
-        public static dynamic Query(string connectionName, string select, object param = null)
+        /// <summary>
+        /// Select用の実行機能を提供します。
+        /// </summary>
+        ///          <code>
+        ///                 IEnumerable<User> result = DapperManager.Query<User>("MVC5TemplateServer",
+        ///            "SELECT UserID, FamilyName, FirstName FROM [dbo].[User] WHERE UserID = @UserID AND Password = @Password",
+        ///            new { UserID = model.UserID, Password = model.Password });
+        /// </code>
+        /// <param name="connectionName">コネクションストリング</param>
+        /// <param name="query">クエリ</param>
+        /// <param name="param">パラメータ</param>
+        /// <returns>実行結果</returns>
+        public static dynamic Query(string connectionName, string query, object param = null)
         {
-            OutputLog(connectionName, select, param);
+            OutputLog(connectionName, query, param);
             using (var cn = new DbConnectionFactory(connectionName).Create())
             {
                 cn.Open();
-                var result = cn.Query(select, param);
+                var result = cn.Query(query, param);
                 return result;
             }
         }
 
-        public static IEnumerable<T> Query<T>(string connectionName, string select, object param = null)
+        /// <summary>
+        /// Select用の実行機能を提供します。
+        /// </summary>
+        /// <typeparam name="T">結果保存用の型</typeparam>
+        /// <param name="connectionName">コネクションストリング</param>
+        /// <param name="query">クエリ</param>
+        /// <param name="param">パラメータ</param>
+        /// <returns>実行結果</returns>
+        public static IEnumerable<T> Query<T>(string connectionName, string query, object param = null)
         {
-            OutputLog(connectionName, select, param);
+            OutputLog(connectionName, query, param);
             using (var cn = new DbConnectionFactory(connectionName).Create())
             {
                 cn.Open();
-                var result = cn.Query<T>(select, param);
+                var result = cn.Query<T>(query, param);
                 return result;
             }
         }
