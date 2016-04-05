@@ -41,34 +41,32 @@
     </script>
 }
 
-<div class="container">
-    <!-- https://blueimp.github.io/Gallery/ -->
-    <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
-    <div id="blueimp-gallery" class="blueimp-gallery">
-        <div class="slides"></div>
-        <h3 class="title"></h3>
-        <a class="prev">‹</a>
-        <a class="next">›</a>
-        <a class="close">×</a>
-        <a class="play-pause"></a>
-        <ol class="indicator"></ol>
-    </div>
+<!-- https://blueimp.github.io/Gallery/ -->
+<!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
 
-    <div id="blueimp-gallery-carousel" class="blueimp-gallery blueimp-gallery-carousel">
-        <div class="slides"></div>
-        <h3 class="title"></h3>
-        <a class="prev">‹</a>
-        <a class="next">›</a>
-        <a class="play-pause"></a>
-        <ol class="indicator"></ol>
-    </div>
+<div id="blueimp-gallery-carousel" class="blueimp-gallery blueimp-gallery-carousel">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
 
-    <div id="links">
-        @foreach (var file in Model)
-        {
-            <a href="@file" title="ネコ" data-gallery>
-                <img src="@file" alt="@file" />
-            </a>
-        }
-    </div>
+<div id="links">
+    @foreach (var file in Model)
+    {
+        <a href="@file" title="ネコ" data-gallery>
+            <img src="@file" alt="@file" />
+        </a>
+    }
 </div>

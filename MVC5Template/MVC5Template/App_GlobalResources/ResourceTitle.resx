@@ -117,10 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Account_Login_Title" xml:space="preserve">
+    <value>ログイン</value>
+  </data>
+  <data name="Home_Index_Title" xml:space="preserve">
+    <value>ホーム</value>
+  </data>
   <data name="Layout_Title" xml:space="preserve">
     <value>JCS Sample Application</value>
   </data>
-  <data name="Login_Title" xml:space="preserve">
-    <value>ログイン</value>
+  <data name="Sample_Exception_Index_Title" xml:space="preserve">
+    <value>Exception</value>
+  </data>
+  <data name="Sample_FormsAuthentication_Index_Title" xml:space="preserve">
+    <value>FormsAuthentication</value>
+  </data>
+  <data name="Sample_JsonSample_Index_Title" xml:space="preserve">
+    <value>C# to Json</value>
+  </data>
+  <data name="Sample_Plugin_Calendar_Title" xml:space="preserve">
+    <value>Calendar</value>
+  </data>
+  <data name="Sample_Plugin_Handsontable_Title" xml:space="preserve">
+    <value>Handsontable</value>
+  </data>
+  <data name="Sample_Plugin_ImageGallery_Title" xml:space="preserve">
+    <value>ImageGallery</value>
+  </data>
+  <data name="Sample_Plugin_Session_Title" xml:space="preserve">
+    <value>Session</value>
+  </data>
+  <data name="Sample_ResultSample_Index_Title" xml:space="preserve">
+    <value>ResultSample</value>
+  </data>
+  <data name="Sample_SampleHome_Index_Title" xml:space="preserve">
+    <value>サンプルアプリ</value>
+  </data>
+  <data name="Sample_User_Create_Title" xml:space="preserve">
+    <value>作成</value>
+  </data>
+  <data name="Sample_User_Delete_Title" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="Sample_User_Details_Title" xml:space="preserve">
+    <value>詳細</value>
+  </data>
+  <data name="Sample_User_Edit_Title" xml:space="preserve">
+    <value>編集</value>
+  </data>
+  <data name="Sample_User_Index_Title" xml:space="preserve">
+    <value>ユーザー一覧画面</value>
   </data>
 </root>

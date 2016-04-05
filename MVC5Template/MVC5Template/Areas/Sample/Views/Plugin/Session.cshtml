@@ -32,28 +32,26 @@
     </script>
 }
 
-<div class="container">
-    <table id="session" class="table table-striped table-bordered" cellspacing="0">
-        <thead>
-            <tr>
-                <th>@HttpContext.GetGlobalResourceObject("ResourceElementValue", "Session_SessionKey")</th>
-                <th>@HttpContext.GetGlobalResourceObject("ResourceElementValue", "Session_SessionValue")</th>
-            </tr>
-        </thead>
-        <tfoot>
-            <tr>
-                <th>@HttpContext.GetGlobalResourceObject("ResourceElementValue", "Session_SessionKey")</th>
-                <th>@HttpContext.GetGlobalResourceObject("ResourceElementValue", "Session_SessionValue")</th>
-            </tr>
-        </tfoot>
-        <tbody>
-            @foreach (string key in Session.Keys)
+<table id="session" class="table table-striped table-bordered" cellspacing="0">
+    <thead>
+        <tr>
+            <th>@HttpContext.GetGlobalResourceObject("ResourceElementValue", "Session_SessionKey")</th>
+            <th>@HttpContext.GetGlobalResourceObject("ResourceElementValue", "Session_SessionValue")</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>@HttpContext.GetGlobalResourceObject("ResourceElementValue", "Session_SessionKey")</th>
+            <th>@HttpContext.GetGlobalResourceObject("ResourceElementValue", "Session_SessionValue")</th>
+        </tr>
+    </tfoot>
+    <tbody>
+        @foreach (string key in Session.Keys)
             {
-                <tr>
-                    <td>@key</td>
-                    <td>@Session[key]</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-</div>
+            <tr>
+                <td>@key</td>
+                <td>@Session[key]</td>
+            </tr>
+        }
+    </tbody>
+</table>

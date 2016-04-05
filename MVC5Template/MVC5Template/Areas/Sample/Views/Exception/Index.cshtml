@@ -1,11 +1,9 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = HttpContext.GetGlobalResourceObject("ResourceTitle", "Sample_Exception_Index_Title");
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
-    <h2>Index</h2>
+<h2>Index</h2>
 
-    @Html.ActionLink("Exception", "Exception", new { }, new { @class = "btn btn-default" })
-</div>
+@Html.ActionLink("Exception", "Exception", new { }, new { @class = "btn btn-default" })

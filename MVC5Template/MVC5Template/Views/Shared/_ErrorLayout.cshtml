@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>@ViewBag.Title - @HttpContext.GetGlobalResourceObject("ResourceTitle", "Layout_Title")</title>
@@ -20,18 +22,26 @@
 <body>
     <div class="header">
         <div class="navbar navbar-default navbar-fixed-top">
-            <div class="navbar-header">
-                @Html.Label(HttpContext.GetGlobalResourceObject("ResourceTitle", "Layout_Title").ToString(), new { @class = "navbar-text" })
+            <div class="container">
+                <div class="navbar-header">
+                    @Html.Label(HttpContext.GetGlobalResourceObject("ResourceTitle", "Layout_Title").ToString(), new { id="lblHeaderTitle", @class = "navbar-text" })
+                </div>
             </div>
         </div>
     </div>
     <div class="contents">
-        @RenderBody()
+        <div class="container">
+            @RenderBody()
+        </div>
     </div>
-    <div class="footer">
-        <hr />
-        <div class="text-center">@(Html.Raw(String.Format(HttpContext.GetGlobalResourceObject("ResourceElementValue", "Layout_CopyRight").ToString(), DateTime.Now.Year)))</div>
-    </div>
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">
+                @(Html.Raw(String.Format(HttpContext.GetGlobalResourceObject("ResourceElementValue", "Layout_CopyRight").ToString(), DateTime.Now.Year)))
+            </p>
+        </div>
+    </footer>
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/myApp")

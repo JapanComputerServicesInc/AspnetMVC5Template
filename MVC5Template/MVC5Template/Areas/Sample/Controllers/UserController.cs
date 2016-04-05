@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 
-namespace MVC5Template.Areas.Admin.Controllers
+namespace MVC5Template.Areas.Sample.Controllers
 {
     public class UserController : SupportContoller
     {

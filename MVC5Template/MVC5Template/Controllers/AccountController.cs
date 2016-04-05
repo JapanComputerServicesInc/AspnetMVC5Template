@@ -10,9 +10,9 @@ namespace MVC5Template.Controllers
 {
     public class AccountController : SupportContoller
     {
-        public AccountController() : base("AccountController")
-        {
-        }
+        public AccountController() : base() { }
+
+        public bool IsUsedReturnUrl { get; set; }
 
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
@@ -24,6 +24,7 @@ namespace MVC5Template.Controllers
         [HttpPost]
         public ActionResult Login(LoginViewModel model, string returnUrl)
         {
+            IsUsedReturnUrl = false;
             if (ModelState.IsValid)
             {
                 IEnumerable<User> result = DapperManager.Query<User>("MVC5TemplateServer",
@@ -34,13 +35,22 @@ namespace MVC5Template.Controllers
                     Session.Add("UserInfo", result.First());
                     FormsAuthentication.RedirectFromLoginPage(model.UserID, false);
                     //FormsAuthentication.SetAuthCookie(model.UserID, false);
-                    //if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/") && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\")) return this.Redirect(returnUrl);
+
+                    if (IsUsedReturnUrl
+                        && Url.IsLocalUrl(returnUrl)
+                        && returnUrl.Length > 1
+                        && returnUrl.StartsWith("/")
+                        && !returnUrl.StartsWith("//")
+                        && !returnUrl.StartsWith("/\\"))
+                        return this.Redirect(returnUrl);
+
                     return RedirectToAction(string.Empty, "Home");
                 }
                 else
                 {
                     ModelState.AddModelError(
-                        "Login_Error", HttpContext.GetGlobalResourceObject("ResourceError", "Login_LoginError_ErrorMessage").ToString());
+                        "Login_Error",
+                        HttpContext.GetGlobalResourceObject("ResourceError", "Login_LoginError_ErrorMessage").ToString());
                 }
             }
             return View(model);

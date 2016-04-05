@@ -117,7 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Home_Sample_SampleHome_Index_About" xml:space="preserve">
+    <value>サンプルアプリケーションを作成する場合は、リンク先の画面に作成してください。</value>
+  </data>
   <data name="Login_Please_Login" xml:space="preserve">
     <value>ログインしてください</value>
+  </data>
+  <data name="Sample_SampleHome_Exception_Index_About" xml:space="preserve">
+    <value>ボタンをクリックすると、Exceptionが発生する。&lt;br /&gt;テスト用。</value>
+  </data>
+  <data name="Sample_SampleHome_FormsAuthentication_Index_About" xml:space="preserve">
+    <value>クッキー情報を表示してくれるサンプル。&lt;br /&gt;ログイン情報等、表示させている。</value>
+  </data>
+  <data name="Sample_SampleHome_Index_User_About" xml:space="preserve">
+    <value>ユーザーの一覧、登録、削除、編集、詳細のサンプル画面。&lt;br /&gt;一覧の表示には&lt;a href="https://datatables.net/" target="_blank"&gt;datatables&lt;/a&gt;を使用している。</value>
+  </data>
+  <data name="Sample_SampleHome_JsonSample_Index_About" xml:space="preserve">
+    <value>ModelからJsonを作成してくれるサンプル。&lt;br /&gt;便利だと思われるが、まだ試作段階。&lt;br /&gt;&lt;a href="http://json2csharp.com/"&gt;json2csharp&lt;/a&gt;このこのサイトの機能を参考に作ってみている。</value>
+  </data>
+  <data name="Sample_SampleHome_Plugin_Calendar_About" xml:space="preserve">
+    <value>&lt;a href="http://fullcalendar.io/" target="_blank"&gt;FullCalendar&lt;/a&gt;と&lt;a href="https://eonasdan.github.io/bootstrap-datetimepicker/" target="_blank"&gt;Bootstrap-DatePicker&lt;/a&gt;のサンプル。&lt;br /&gt;FullCalendarは現在は表示しているだけ。DatePickerは日本語化対応されている。</value>
+  </data>
+  <data name="Sample_SampleHome_Plugin_Handsontable_About" xml:space="preserve">
+    <value>Handsontableのサンプル。&lt;br /&gt;動きはするが、まだ作成中の段階。</value>
+  </data>
+  <data name="Sample_SampleHome_Plugin_ImageGallery_About" xml:space="preserve">
+    <value>blueimp Galleryという、イメージ＆ビデオ用のギャラリーを表示できるサンプル。&lt;br /&gt;少しだけ、挙動がおかしいところがあるが、動いてはいる。</value>
+  </data>
+  <data name="Sample_SampleHome_Plugin_Session_About" xml:space="preserve">
+    <value>セッションに値を入れて、それを表示させるサンプル。&lt;br /&gt;一覧の表示には&lt;a href="https://datatables.net/" target="_blank"&gt;datatables&lt;/a&gt;を使用している。</value>
+  </data>
+  <data name="Sample_SampleHome_ResultSample_Index_About" xml:space="preserve">
+    <value>アクション時の結果を通知する方法を見せるための、サンプル。&lt;br /&gt;いらないかも。</value>
   </data>
 </root>

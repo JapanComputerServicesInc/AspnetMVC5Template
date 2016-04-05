@@ -424,11 +424,11 @@
     <Content Include="Content\DataTables-1.10.11\extensions\Buttons\css\common.scss" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Site\Views\web.config" />
-    <Content Include="Areas\Admin\Views\User\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\User\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\User\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\User\Index.cshtml" />
+    <Content Include="Areas\Sample\Views\User\Create.cshtml" />
+    <Content Include="Areas\Sample\Views\User\Delete.cshtml" />
+    <Content Include="Areas\Sample\Views\User\Details.cshtml" />
+    <Content Include="Areas\Sample\Views\User\Edit.cshtml" />
+    <Content Include="Areas\Sample\Views\User\Index.cshtml" />
     <Content Include="Areas\WebApi\Views\web.config" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap-datepicker.min.js" />
@@ -503,7 +503,6 @@
     <Content Include="Scripts\locales\bootstrap-datepicker.zh-TW.min.js" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Sample\Views\web.config" />
     <Content Include="Areas\Sample\Views\SampleHome\Index.cshtml" />
     <Content Include="Areas\Sample\Views\Exception\Index.cshtml" />
@@ -683,11 +682,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_GlobalResources\ResourceDataTables.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ResourceDataTables.resx</DependentUpon>
-    </Compile>
     <Compile Include="App_GlobalResources\ResourceElementValue.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -708,10 +702,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceTitle.resx</DependentUpon>
     </Compile>
+    <Compile Include="App_GlobalResources\ResourceTitle.en.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceTitle.en.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\UserController.cs" />
+    <Compile Include="Areas\Sample\Controllers\UserController.cs" />
     <Compile Include="Areas\Sample\Controllers\SampleHomeController.cs" />
     <Compile Include="Areas\Sample\Controllers\ExceptionController.cs" />
     <Compile Include="Areas\Sample\SampleAreaRegistration.cs" />
@@ -774,6 +773,7 @@
   <ItemGroup>
     <Folder Include="App_Data\logs\" />
     <Folder Include="App_LocalResources\" />
+    <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\Sample\Models\" />
@@ -789,10 +789,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="App_GlobalResources\ResourceDataTables.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>ResourceDataTables.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <Content Include="App_GlobalResources\ResourceElementValue.en.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
     </Content>
@@ -804,6 +800,7 @@
     </Content>
     <Content Include="App_GlobalResources\ResourceTitle.en.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ResourceTitle.en.designer.cs</LastGenOutput>
     </Content>
     <EmbeddedResource Include="App_GlobalResources\ResourceTitle.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
@@ -820,11 +817,6 @@
     <EmbeddedResource Include="App_GlobalResources\ResourceElementValue.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>ResourceElementValue.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="App_GlobalResources\ResourceDataTables.en.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -126,13 +126,13 @@
   <data name="Layout_link_Logout" xml:space="preserve">
     <value>Logout</value>
   </data>
-  <data name="Login_btnLogin" xml:space="preserve">
+  <data name="Account_Login_btnLogin" xml:space="preserve">
     <value>ログイン</value>
   </data>
-  <data name="Login_Password" xml:space="preserve">
+  <data name="Account_Login_Password" xml:space="preserve">
     <value>パスワード</value>
   </data>
-  <data name="Login_UserID" xml:space="preserve">
+  <data name="Account_Login_UserID" xml:space="preserve">
     <value>ユーザーID</value>
   </data>
   <data name="Session_SessionKey" xml:space="preserve">
@@ -143,5 +143,17 @@
   </data>
   <data name="Layout_link_Back" xml:space="preserve">
     <value>Back</value>
+  </data>
+  <data name="Sample_FormsAuthentication_h2_Title" xml:space="preserve">
+    <value>クッキー情報</value>
+  </data>
+  <data name="Sample_FormsAuthentication_th_Name1" xml:space="preserve">
+    <value>値</value>
+  </data>
+  <data name="Sample_FormsAuthentication_th_Name2" xml:space="preserve">
+    <value>名前</value>
+  </data>
+  <data name="Sample_JsonSample_btnRequest_Value" xml:space="preserve">
+    <value>リクエスト</value>
   </data>
 </root>

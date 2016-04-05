@@ -2,7 +2,7 @@
 
 @{
     Layout = "~/Views/Shared/_LoginLayout.cshtml";
-    ViewBag.Title = HttpContext.GetGlobalResourceObject("ResourceTitle", "Login_Title");
+    ViewBag.Title = HttpContext.GetGlobalResourceObject("ResourceTitle", "Account_Login_Title");
 }
 
 @section styles {
@@ -10,40 +10,37 @@
 }
 
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval");
+    @Scripts.Render("~/bundles/jqueryval")
 }
 
-<div class="container">
-    @using (Html.BeginForm())
-    {
-        @*@Html.ValidationSummary()*@
-        <div class="placeholder center-block">
-            @Html.ValidationMessage("Login_Error", new { @class = "text-danger" })
-            <div class="well">
-                <div class="form-group">
-                    @Html.TextBoxFor(m => m.UserID,
+@using (Html.BeginForm())
+{
+    <div class="placeholder center-block">
+        @Html.ValidationMessage("Login_Error", new { @class = "text-danger" })
+        <div class="well">
+            <div class="form-group">
+                @Html.TextBoxFor(m => m.UserID,
                     new
                     {
                         maxlength = "6",
-                        id = "inputUserID",
+                        id = "txtUserID",
                         @class = "form-control",
-                        placeholder = HttpContext.GetGlobalResourceObject("ResourceElementValue", "Login_UserID").ToString()
+                        placeholder = HttpContext.GetGlobalResourceObject("ResourceElementValue", "Account_Login_UserID").ToString()
                     })
-                    @Html.ValidationMessageFor(m => m.UserID, "", new { @class = "text-danger" })
-                </div>
-                <div class="form-group">
-                    @Html.PasswordFor(m => m.Password,
+                @Html.ValidationMessageFor(m => m.UserID, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.PasswordFor(m => m.Password,
                     new
                     {
                         maxlength = "30",
-                        id = "inputPassword",
+                        id = "pwdPassword",
                         @class = "form-control",
-                        placeholder = HttpContext.GetGlobalResourceObject("ResourceElementValue", "Login_Password").ToString()
+                        placeholder = HttpContext.GetGlobalResourceObject("ResourceElementValue", "Account_Login_Password").ToString()
                     })
-                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                </div>
-                <input type="submit" class="btn btn-lg btn-primary btn-block" value="@HttpContext.GetGlobalResourceObject("ResourceElementValue", "Login_btnLogin").ToString()" name="btnLogin" />
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
             </div>
+            <input type="submit" value="@HttpContext.GetGlobalResourceObject("ResourceElementValue", "Account_Login_btnLogin").ToString()" id="btnLogin" class="btn btn-lg btn-primary btn-block" />
         </div>
-    }
-</div>
+    </div>
+}

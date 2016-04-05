@@ -14,9 +14,6 @@ namespace MVC5Template.Extensions
         {
 
         }
-        protected SupportContoller(string name) : base()
-        {
-        }
 
         protected string ContllorName
         {
