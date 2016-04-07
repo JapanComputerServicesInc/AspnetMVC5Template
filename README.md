@@ -2,8 +2,10 @@
 ASP.NET MVC5のテンプレート
 
 ## 前提条件
+ - .NET Framework 4.5.2
 
- - .NET Framework 4.5.2  
+## 使用ツール
+ - [Visual Studio Express](https://www.visualstudio.com/ja-jp/products/visual-studio-express-vs.aspx)
 
 ## 実装機能一覧
   
