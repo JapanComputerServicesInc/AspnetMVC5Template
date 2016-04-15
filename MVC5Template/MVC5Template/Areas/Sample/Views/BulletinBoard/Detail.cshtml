@@ -1,0 +1,39 @@
+﻿
+@model MVC5Template.Areas.Sample.Models.BulletinBoardModel
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = HttpContext.GetGlobalResourceObject("ResourceTitle", "Sample_BulletinBoard_Index_Title");
+    var userInfo = (MVC5Template.Models.User)Session["UserInfo"];
+}
+
+<div>
+    <div class="panel panel-info">
+        <div class="panel-heading">@Html.DisplayFor(model => model.Topics.First().TopicId)&ensp;@Html.DisplayFor(model => model.Topics.First().Title)&ensp;@Html.DisplayFor(model => model.Topics.First().InsertUserId)</div>
+        <div class="panel-body" style="white-space:pre-line;">@Html.DisplayFor(modelItem => Model.Topics.First().Detail)</div>        
+    </div>
+</div>
+
+<div>
+    @foreach (var item in Model.Comments)
+    {
+        <div class="panel panel-default">
+            <div class="panel-heading">@Html.DisplayFor(modelItem => item.No)&ensp;@Html.DisplayFor(modelItem => item.InsertUserId)</div>
+            <div class="panel-body" style="white-space:pre-line;">@Html.DisplayFor(modelItem => item.Comment)</div>           
+        </div>
+    }
+</div>
+<div>
+    <p>新規コメント</p>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <p>@Html.TextArea("Comment", new { rows = 12, cols = 75, @class = "form-control" })</p>
+        @Html.Hidden("userid", userInfo.UserID)
+        <p>
+            <input type="submit" value="送信" class="btn btn-success" id="btnComment" />
+            @Html.ActionLink("Back to List", "Index", string.Empty, new { id = "btnBack", @class = "btn btn-default" })
+        </p>
+    }
+</div>

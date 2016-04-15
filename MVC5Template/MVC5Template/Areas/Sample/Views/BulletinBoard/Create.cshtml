@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = HttpContext.GetGlobalResourceObject("ResourceTitle", "Sample_BulletinBoard_Index_Title");
+    var userInfo = (MVC5Template.Models.User)Session["UserInfo"];
+}
+
+<div>
+    
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <p>タイトル</p>
+        <p>@Html.TextBox("sTitle","", new { @class = "form-control" })</p>
+        <p>新規トピック</p>
+        <p>@Html.TextArea("sDetail", new { rows = 12, cols = 75, @class = "form-control" })</p>
+        @Html.Hidden("userid", userInfo.UserID)
+        <p>
+            <input type="submit" value="送信" class="btn btn-success" id="btnTopic" />
+            @Html.ActionLink("Back to List", "Index", string.Empty, new { id = "btnBack", @class = "btn btn-default" })
+        </p>
+    }
+</div>

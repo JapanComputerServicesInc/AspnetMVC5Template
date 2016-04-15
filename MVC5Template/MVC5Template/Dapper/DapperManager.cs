@@ -3,6 +3,7 @@ using NLog;
 using System.Data.Common;
 using System.Collections.Generic;
 using System.Text;
+using System;
 
 namespace MVC5Template.Dapper
 {
@@ -71,8 +72,9 @@ namespace MVC5Template.Dapper
                         result = cn.Execute(update, param, tr);
                         tr.Commit();
                     }
-                    catch
+                    catch(Exception e)
                     {
+                        logger.Debug(e.Message);
                         tr.Rollback();
                     }
                 }

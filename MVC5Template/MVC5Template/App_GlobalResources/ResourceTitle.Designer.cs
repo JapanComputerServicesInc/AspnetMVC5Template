@@ -88,6 +88,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   掲示板 に類似したローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Sample_BulletinBoard_Index_Title {
+            get {
+                return ResourceManager.GetString("Sample_BulletinBoard_Index_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Exception に類似したローカライズされた文字列を検索します。
         /// </summary>
         internal static string Sample_Exception_Index_Title {

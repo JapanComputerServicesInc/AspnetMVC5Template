@@ -79,6 +79,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   掲示板のサンプル に類似したローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Sample_SampleHome_BulletinBoard_Index_About {
+            get {
+                return ResourceManager.GetString("Sample_SampleHome_BulletinBoard_Index_About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   ボタンをクリックすると、Exceptionが発生する。&lt;br /&gt;テスト用。 に類似したローカライズされた文字列を検索します。
         /// </summary>
         internal static string Sample_SampleHome_Exception_Index_About {

@@ -1,0 +1,54 @@
+﻿
+@model MVC5Template.Areas.Sample.Models.BulletinBoardModel
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = HttpContext.GetGlobalResourceObject("ResourceTitle", "Sample_BulletinBoard_Index_Title");
+
+}
+
+<h2>掲示板</h2>
+<p>
+    @Html.ActionLink("Create New", "Create", "", new { @class = "btn btn-success" })
+</p>
+<table id="session" class="table table-striped table-bordered" cellspacing="0">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Topics.First().TopicId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Topics.First().Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Topics.First().UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Topics.First().InsertDate)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Topics)
+            {
+            <tr>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.TopicId)*@
+                    @Html.ActionLink(@item.TopicId.ToString(), "Detail", new { id = item.TopicId }, new { @class = "btn btn-link" })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InsertDate)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

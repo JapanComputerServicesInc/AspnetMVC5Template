@@ -58,4 +58,10 @@
         <p>@Html.Raw(HttpContext.GetGlobalResourceObject("ResourceMessage", "Sample_SampleHome_Exception_Index_About"))</p>
         <p>@Html.ActionLink(HttpContext.GetGlobalResourceObject("ResourceTitle", "Sample_Exception_Index_Title").ToString(), "Index", "Exception", new { area = "Sample" }, new { id = "lnkException", @class = "btn btn-primary" })</p>
     </div>
+    <div class="col-md-4">
+        <h2>@HttpContext.GetGlobalResourceObject("ResourceTitle", "Sample_BulletinBoard_Index_Title")</h2>
+        <p>@Html.Raw(HttpContext.GetGlobalResourceObject("ResourceMessage", "Sample_SampleHome_BulletinBoard_Index_About"))</p>
+        <p>@Html.ActionLink(HttpContext.GetGlobalResourceObject("ResourceTitle", "Sample_BulletinBoard_Index_Title").ToString(), "Index", "BulletinBoard", new { area = "Sample" }, new { id = "lnkBulletinBoard", @class = "btn btn-primary" })</p>
+    </div>
+
 </div>

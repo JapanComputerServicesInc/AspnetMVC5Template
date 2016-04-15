@@ -123,6 +123,9 @@
   <data name="Login_Please_Login" xml:space="preserve">
     <value>ログインしてください</value>
   </data>
+  <data name="Sample_SampleHome_BulletinBoard_Index_About" xml:space="preserve">
+    <value>掲示板のサンプル</value>
+  </data>
   <data name="Sample_SampleHome_Exception_Index_About" xml:space="preserve">
     <value>ボタンをクリックすると、Exceptionが発生する。&lt;br /&gt;テスト用。</value>
   </data>
