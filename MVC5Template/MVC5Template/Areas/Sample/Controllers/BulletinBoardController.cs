@@ -21,12 +21,7 @@ namespace MVC5Template.Areas.Sample.Controllers
                 "MVC5TemplateServer",
                 "SELECT TopicId,Title,Detail,InsertUserId,InsertDate,FamilyName+FirstName as UserName FROM [dbo].[TopicTable] inner join [User] on InsertUserId = UserID");
 
-            IEnumerable<CommentTable> comments = DapperManager.Query<CommentTable>(
-                "MVC5TemplateServer",
-                "SELECT * FROM [dbo].[CommentTable]");
-
             model.Topics = topics;
-            model.Comments = comments;
             return View(model);
         }
 
@@ -41,11 +36,11 @@ namespace MVC5Template.Areas.Sample.Controllers
                 BulletinBoardModel model = new BulletinBoardModel();
                 IEnumerable<TopicTable> topics = DapperManager.Query<TopicTable>(
                     "MVC5TemplateServer",
-                    "SELECT * FROM [dbo].[TopicTable] where TopicId = @TopicId", new { TopicId = id });
+                    "SELECT TopicId,Title,Detail,InsertUserId,InsertDate,FamilyName+FirstName as UserName FROM [dbo].[TopicTable] inner join [User] on InsertUserId = UserID where TopicId = @TopicId", new { TopicId = id });
 
                 IEnumerable<CommentTable> comments = DapperManager.Query<CommentTable>(
                     "MVC5TemplateServer",
-                    "SELECT * FROM [dbo].[CommentTable] where TopicId = @TopicId order by No", new { TopicId = id });
+                    "SELECT TopicId,No,Comment,InsertUserId,InsertDate,FamilyName+FirstName as UserName FROM [dbo].[CommentTable] inner join [User] on InsertUserId = UserID where TopicId = @TopicId order by No", new { TopicId = id });
 
                 model.Topics = topics;
                 model.Comments = comments;

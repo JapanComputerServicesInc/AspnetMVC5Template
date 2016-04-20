@@ -10,7 +10,7 @@
 
 <div>
     <div class="panel panel-info">
-        <div class="panel-heading">@Html.DisplayFor(model => model.Topics.First().TopicId)&ensp;@Html.DisplayFor(model => model.Topics.First().Title)&ensp;@Html.DisplayFor(model => model.Topics.First().InsertUserId)</div>
+        <div class="panel-heading">@Html.DisplayFor(model => model.Topics.First().TopicId)&ensp;@Html.DisplayFor(model => model.Topics.First().Title)&ensp;@Html.DisplayFor(model => model.Topics.First().UserName)</div>
         <div class="panel-body" style="white-space:pre-line;">@Html.DisplayFor(modelItem => Model.Topics.First().Detail)</div>        
     </div>
 </div>
@@ -19,7 +19,7 @@
     @foreach (var item in Model.Comments)
     {
         <div class="panel panel-default">
-            <div class="panel-heading">@Html.DisplayFor(modelItem => item.No)&ensp;@Html.DisplayFor(modelItem => item.InsertUserId)</div>
+            <div class="panel-heading">@Html.DisplayFor(modelItem => item.No)&ensp;@Html.DisplayFor(modelItem => item.UserName)</div>
             <div class="panel-body" style="white-space:pre-line;">@Html.DisplayFor(modelItem => item.Comment)</div>           
         </div>
     }

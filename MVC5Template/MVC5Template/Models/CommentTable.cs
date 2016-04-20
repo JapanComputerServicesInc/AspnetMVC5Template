@@ -17,6 +17,8 @@ namespace MVC5Template.Models
 
         public int? InsertUserId { get; set; }
 
+        public string UserName { get; set; }
+
         [Column(TypeName = "date")]
         public DateTime? InsertDate { get; set; }
     }
